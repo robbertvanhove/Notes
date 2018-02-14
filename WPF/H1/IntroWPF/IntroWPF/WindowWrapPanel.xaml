@@ -1,0 +1,22 @@
+﻿<Window x:Class="IntroWPF.WindowWrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IntroWPF"
+        mc:Ignorable="d"
+        Title="WindowWrapPanel" Height="300" Width="300">
+    <Grid>
+        <WrapPanel Background="AliceBlue" Orientation="Vertical" >
+            <Rectangle Fill="Blue" Height="50" Width="50" Stroke="Black"
+    RadiusX="50" RadiusY="50" />
+            <Rectangle Fill="Green" Height="50" Width="100" Stroke="Black"
+    RadiusX="10" RadiusY="10" />
+            <Rectangle Fill="Yellow" Height="80" Width="50" Stroke="Black"
+    RadiusX="10" RadiusY="10" />
+            <Rectangle Fill="Orange" Height="50" Width="100" Stroke="Black"
+    RadiusX="10" RadiusY="60" />
+        </WrapPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,5 @@
+config.xml: configuratie
+app.xaml: resources
+InitializeComponent(): tonen xaml
+stijlen maken: app.xaml
+
