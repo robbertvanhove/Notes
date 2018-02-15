@@ -1,5 +1,5 @@
 # UML
-## Hoofdstuk 1
+## Hoofdstuk 1: inleiding
 ### OO
 * Encapsulation:
     - Data is afgeschermd
@@ -15,3 +15,7 @@
     - Moeilijker te ontwerpen/programmeren
     - Voor kleinere programma's -> klassiek programmeren efficiënter
     - Voor bepaalde doeleinden: functionele talen en SQL beter geschikt
+
+### UML
+
+## Hoofdstuk 2: Klasse-en objectdiagram
