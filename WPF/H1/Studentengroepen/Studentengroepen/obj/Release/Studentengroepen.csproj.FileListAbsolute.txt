@@ -18,3 +18,4 @@ D:\School\2itf 17-18\Semester 2\WPF\H1\Studentengroepen\Studentengroepen\obj\Rel
 D:\School\2itf 17-18\Semester 2\WPF\H1\Studentengroepen\Studentengroepen\obj\Release\Studentengroepen.csproj.GenerateResource.Cache
 D:\School\2itf 17-18\Semester 2\WPF\H1\Studentengroepen\Studentengroepen\obj\Release\Studentengroepen.exe
 D:\School\2itf 17-18\Semester 2\WPF\H1\Studentengroepen\Studentengroepen\obj\Release\Studentengroepen.pdb
+D:\School\2itf 17-18\Semester 2\WPF\H1\Studentengroepen\Studentengroepen\obj\Release\Studentengroepen.csprojResolveAssemblyReference.cache
