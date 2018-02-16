@@ -10,4 +10,9 @@
     - Het strategic alignment model van Henderson en Venkatraman wordt wel beschouwd als de ‘moeder’ van alle modellen waarin de rol van ICT binnen een organisatie op strategisch niveau beschreven wordt. Het model maakt inzichtelijk dat alle vier de invalshoeken met elkaar in balans moeten zijn: er moet sprake zijn afstemming en/of aansluiting tussen het strategisch en operationele niveau en tussen het business- en IT-domein.
 
 * Je kan aan de hand van het afstemmingsmodel van Henderson en Venkatraman vier visies op alignment benoemen en verduidelijken.
-* Je begrijpt de rol en het belang van ICT bij elk van deze vier visies.  
+    1. Strategische ontwikkeling:
+    2. Technologische transformatie
+    3. Concurrentieel voordeel
+    4. Serviceniveau
+* Je begrijpt de rol en het belang van ICT bij elk van deze vier visies.
+    - 
