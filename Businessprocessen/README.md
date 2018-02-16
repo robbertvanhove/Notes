@@ -22,6 +22,5 @@
     - ICT is een katalysator voor nieuwe ideeën en technologische innovatie van de organisatie. Deze ideeën worden opgepakt door de organisatie en meegenomen in de bedrijfsstrategie van waaruit deze ontwikkelingen een plek krijgen in de dagdagelijkse operaties.
 * Serviceniveau:
     - In de laatste visie heeft ICT het hoogste volwassenheidsniveau bereikt. ICT denkt zoals de business.
-    - Technologische innovaties zijn businessgericht uitgewerkt en worden bijgevolg moeiteloos door de organisatie opgenomen. Via een soort ‘AppStore’ worden nieuwe functionaliteiten in de businessprocessen geïntegreerd.
-### Je begrijpt de rol en het belang van ICT bij elk van deze vier visies.
-* 
+    - Technologische innovaties zijn businessgericht uitgewerkt en worden bijgevolg moeiteloos door de organisatie opgenomen. Via een soort ‘AppStore’ worden nieuwe functionaliteiten in de businessprocessen geïntegreerd.
+
