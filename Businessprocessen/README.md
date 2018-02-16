@@ -6,6 +6,6 @@
 * Je kan het belang van BITA in de bedrijfswereld schetsen.
     - muur tussen beiden opheffen
 * Je kan het alignment of afstemmingsmodel van Henderson en Venkatraman uitleggen en tekenen.
-- ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+    - ![afstemmingsmodel](Afbeelding1.png)
 * Je kan aan de hand van het afstemmingsmodel van Henderson en Venkatraman vier visies op alignment benoemen en verduidelijken.
 * Je begrijpt de rol en het belang van ICT bij elk van deze vier visies.  
