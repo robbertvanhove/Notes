@@ -24,5 +24,29 @@ namespace Planten
         {
             InitializeComponent();
         }
+
+        private void ComboBoxKleuren_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((framePlanten.Content != null) && (framePlanten.Content is PageOverzicht))
+            {
+                ((PageOverzicht)framePlanten.Content).ListBoxPlanten.DataContext = ComboBoxKleuren.SelectedItem; //datacontext van listboxplanten gelijk maken aan selectedItem
+            }
+        }
+
+        private void ButtonBackward_Click(object sender, RoutedEventArgs e)
+        {
+            if (framePlanten.NavigationService.CanGoBack)
+            {
+                framePlanten.NavigationService.GoBack();
+            }
+        }
+
+        private void ButtonForward_Click(object sender, RoutedEventArgs e)
+        {
+            if (framePlanten.CanGoForward)
+            {
+                framePlanten.GoForward();
+            }
+        }
     }
 }

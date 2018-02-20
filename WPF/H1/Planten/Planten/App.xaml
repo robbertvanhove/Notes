@@ -8,6 +8,7 @@
         <SolidColorBrush x:Key="RandKleur" Color="White" />
         <SolidColorBrush x:Key="AchtergrondKleur" Color="Black" />
         <SolidColorBrush x:Key="LetterKleur" Color="White" />
+        <XmlDataProvider x:Key="PlantenData" Source="data/catalogus.xml " XPath="catalog" />
 
     </Application.Resources>
 </Application>

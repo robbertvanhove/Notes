@@ -9,20 +9,27 @@
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="ToolBarButton">
-            <Setter Property="Background" Value="Green" />
-            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="Background" Value="{StaticResource ToolBarKleur}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RandKleur}" />
+            <Setter Property="Foreground" Value="{StaticResource LetterKleur}" />
             <Setter Property="Margin" Value="10" />
-            <Setter Property="Padding" Value="5" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="FontSize" Value="15" />
         </Style>
         <Style TargetType="ComboBox" x:Key="ToolbarCombo">
-            <Setter Property="Background" Value="Green" />
-            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="Background" Value="{StaticResource ToolBarKleur}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RandKleur}" />
+            <Setter Property="Foreground" Value="{StaticResource LetterKleur}" />
             <Setter Property="Margin" Value="10" />
-            <Setter Property="Width" Value="50" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="FontSize" Value="15" />
+            
         </Style>
-        <XmlDataProvider x:Key="PlantenData" Source="data/catalogus.xml " XPath="catalog" />
+        
         <DataTemplate x:Key="kleurItemTemplate">
-            <Label Content="{Binding XPath=@name}" />
+            <Label Content="{Binding XPath=@name}" Background="{Binding XPath=@name}"   />
         </DataTemplate>
         <DataTemplate x:Key="listBoxPlantenTemplate" >
             <Label Content="{Binding XPath=plant}" />
@@ -31,11 +38,11 @@
 
     <DockPanel>
         <ToolBar DockPanel.Dock="Top" Background="Green">
-            <Button Name="ButtonBackward" Content="Backward" Style="{StaticResource ToolBarButton}"/>
-            <Button Name="ButtonForward" Content="Forward" Style="{StaticResource ToolBarButton}" />
-            <ComboBox Name="ComboBoxKleuren" ItemsSource="{Binding Source={StaticResource PlantenData}, XPath=color}" ItemTemplate="{StaticResource kleurItemTemplate}" />
+            <Button Name="ButtonBackward" Content="Backward" Style="{StaticResource ToolBarButton}" Click="ButtonBackward_Click"/>
+            <Button Name="ButtonForward" Content="Forward" Style="{StaticResource ToolBarButton}" Click="ButtonForward_Click" />
+            <ComboBox Style="{StaticResource ToolbarCombo}" Name="ComboBoxKleuren" Background="Green" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource PlantenData}, XPath=color}" ItemTemplate="{StaticResource kleurItemTemplate}" SelectionChanged="ComboBoxKleuren_SelectionChanged" />
         </ToolBar>
-        <Frame Source="PageOverzicht.xaml" Name="frame" NavigationUIVisibility="Hidden" DataContext="{Binding Source={StaticResource PlantenData}, XPath=color[@name\=\'White\']}" >
+        <Frame Source="PageOverzicht.xaml" Name="framePlanten" NavigationUIVisibility="Hidden" >
             <Frame.Background>
                 <ImageBrush ImageSource="assets/background.jpg" Stretch="UniformToFill"/>
                 

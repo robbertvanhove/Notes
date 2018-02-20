@@ -6,9 +6,36 @@
       xmlns:local="clr-namespace:Planten"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="PageOverzicht">
+      Title="PageOverzicht" Loaded="Page_Loaded">
 
-    <Grid>
-        
+    <Grid >
+        <Grid.Resources>
+
+            <DataTemplate x:Key="ListboxTemplate">
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Name="ImageName" Text="{Binding XPath=botanical, StringFormat=images/{0}.jpg}" Visibility="Collapsed" />
+                    
+                    <Rectangle RenderTransformOrigin="0.5,0.5"  Margin="10" Stroke="{DynamicResource RandKleur}" Width="75" Height="75" RadiusX="5" RadiusY="5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Text, ElementName=ImageName}"/>
+                        </Rectangle.Fill>
+                        
+
+                    </Rectangle>
+                    <StackPanel x:Name="_double" Orientation="Vertical">
+                        <Label Content="{Binding XPath=common}" Foreground="White" FontSize="15" />
+                        <Label Content="{Binding XPath=price}" Foreground="White" FontSize="10" />
+                    </StackPanel>
+                </StackPanel>
+
+            </DataTemplate>
+        </Grid.Resources>
+        <ListBox Name="ListBoxPlanten" Background="Transparent" ItemTemplate="{StaticResource ListboxTemplate}" ItemsSource="{Binding XPath=plant}" MouseDoubleClick="ListBoxPlanten_MouseDoubleClick"/>
     </Grid>
 </Page>

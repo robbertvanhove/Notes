@@ -23,6 +23,28 @@ namespace Planten
         public PageOverzicht()
         {
             InitializeComponent();
+            setPlanten();
+        }
+
+        
+        public void setPlanten()
+        {
+          
+           
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ListBoxPlanten.DataContext =  ((MainWindow)Window.GetWindow(this)).ComboBoxKleuren.SelectedItem; // bij laden pak de default index op mainwindow -> combobox als datacontext 
+        }
+
+        private void ListBoxPlanten_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            PageDetail detail = new PageDetail(ListBoxPlanten.SelectedItem);
+            ((MainWindow)Window.GetWindow(this)).framePlanten.Content = detail;
+
+            
         }
     }
 }
