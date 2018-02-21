@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+    <title>Meteo</title>
+    <style>
+        #weather {
+            display: none;
+        }
+        .card-content h5 {
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .card-image {
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="navbar-fixed">
+    <nav class="teal ">
+        <div class="nav-wrapper container">
+            <a href="#!" class="brand-logo center">Meteo</a>
+        </div>
+    </nav>
+</div>
+<!-- Fixed Action Button -->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="renew"><i class="material-icons">autorenew</i></a>
+</div>
+<!-- Grid -->
+<div class="container">
+    <div class="row">
+        <h4 class="center-align" id="city">Even geduld...</h4>
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+        <div class="col s12" id="weather">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/weather.js"></script>
+<script defer src="js/app.js"></script>
+</body>
+</html>
