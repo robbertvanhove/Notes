@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+    <title>Plug-ins</title>
+    <style>
+        #compassView {
+            position: relative;
+            text-align: center;
+        }
+        #compassImg {
+            position: relative;
+            top: -22px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="navbar-fixed">
+    <nav class="teal ">
+        <div class="nav-wrapper container"><a href="#!" class="brand-logo center">Plug-ins</a>
+            <a href="#!" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+<!-- Fixed sideNav -->
+<ul id="nav-mobile" class="side-nav">
+    <li><a href="#!" data-show="tabDevice"><i class="material-icons">smartphone</i>Device</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="#!" data-show="tabNetwork"><i class="material-icons">network_check</i>Network</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="#!" data-show="tabCompass"><i class="material-icons">my_location</i>Compass</a></li>
+</ul>
+<!-- Grid -->
+<div class="container">
+    <div class="row spa" id="tabDevice">
+        <div class="col s12">
+            <h4><i class="material-icons">smartphone</i> Device</h4>
+            <p><a href="https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html">cordova-plugin-device</a>
+            </p>
+            <div id="model"></div>
+        </div>
+    </div>
+
+    <div class="row spa" id="tabNetwork">
+        <div class="col s12">
+            <h4><i class="material-icons">network_check</i> Network</h4>
+            <p>
+                <a href="https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-network-information/index.html">cordova-plugin-network-information</a>
+            </p>
+            <h5 id="networkState"></h5>
+        </div>
+    </div>
+
+    <div class="row spa" id="tabCompass">
+        <div class="col s12">
+            <h4><i class="material-icons">my_location</i> Compass</h4>
+            <p>
+                <a href="#!" id="startCompass" class="waves-effect waves-light btn orange">Start</a>
+                <a href="#!" id="stopCompass" class="waves-effect waves-light btn orange">Stop</a>
+            </p>
+            <p>
+                <a href="https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device-orientation/index.html">cordova-plugin-device-orientation</a>
+            </p>
+            <div id="compassView">
+                <h5 id="compass">&nbsp;</h5>
+                <p>&#9660;</p>
+                <img id="compassImg" src="assets/compass.png" width="100%" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/device.js"></script>
+<script src="js/network.js"></script>
+<script src="js/compass.js"></script>
+<script defer src="js/app.js"></script>
+</body>
+</html>

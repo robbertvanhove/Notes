@@ -1,0 +1,24 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "be.robbert.plugins"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "be.robbert.plugins"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "be.robbert.plugins"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "be.robbert.plugins"
+        }
+    },
+    "dependent_plugins": {}
+}
