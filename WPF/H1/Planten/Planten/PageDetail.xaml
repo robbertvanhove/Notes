@@ -9,11 +9,8 @@
       Title="PageDetail">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="300">
-            <!--Afbeelding-->
-            <TextBlock Name="ImageName" Text="{Binding XPath=botanical, StringFormat=images/{0}.jpg}" Visibility="Collapsed" />
-
-            <Rectangle Grid.Column="0" RenderTransformOrigin="0.5,0.5" Width="90" Height="90" Margin="10" Stroke="{DynamicResource RandKleur}" RadiusX="5" RadiusY="5">
+        <DockPanel>
+            <Rectangle DockPanel.Dock="Left" RenderTransformOrigin="0.5,0.5" Width="90" Height="90" Margin="10" Stroke="{DynamicResource RandKleur}" RadiusX="5" RadiusY="5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
 
@@ -23,20 +20,30 @@
                     <ImageBrush ImageSource="{Binding Text, ElementName=ImageName}"/>
                 </Rectangle.Fill>
             </Rectangle>
+            <TextBlock Name="ImageName" Text="{Binding XPath=botanical, StringFormat=images/{0}.jpg}" Visibility="Collapsed" />
             
-            <!--Beschrijving-->
-            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="400" >
-                <Label Content="{Binding XPath=common}"  FontSize="20" Foreground="White"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="1" Height="290" Margin="0"  DockPanel.Dock="Right">
+                <Label Content="{Binding XPath=common}"  FontSize="35" Foreground="White"/>
                 <Label Content="{Binding XPath=botanical}"  FontSize="15" Foreground="White"/>
                 <Label Content="{Binding XPath=description}" FontSize="11" Foreground="White"  />
             </StackPanel>
-        </StackPanel>
 
+
+        </DockPanel>
+            <!--Afbeelding-->
         
 
             
-            
+
+            <!--Beschrijving-->
         
+            
+
+
+
+
+
+
 
     </Grid>
 </Page>
