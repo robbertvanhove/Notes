@@ -4,6 +4,10 @@
 ## Examenvragen
 * Verschil proces project; proces belangrijker dan project
 * COBIT: verschil management en governance
+* verschil utility en waranty
+* R0: business-eis (IT value) (pagina 13)
+* willingness to pay
+* 
 
 
 ## Notities
