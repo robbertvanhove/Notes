@@ -9,7 +9,8 @@ $(function () {
     });
 
     $("#startCompass").click(function(){
-        Compass.start();
+       Compass.start();
+        
     });
 
     $("#stopCompass").click(function(){

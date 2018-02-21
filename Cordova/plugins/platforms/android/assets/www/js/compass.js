@@ -19,13 +19,19 @@ var Compass = function () {
 
     };
     var _update = function (txt, degr) {
-        $('#compass').html(txt);
+        var rotatie = 'rotate(' + degr + 'deg)'; //css waarde voor draaien
+        console.log(rotatie);
+
+        $('#compass').html(txt); 
+        $("img#compassImg").css("transform", rotatie); //compas laten roteren
     };
     var start = function () {
         myCompass = navigator.compass.watchHeading(_compassSuccess, _compassError, options);
+        
     };
     var stop = function () {
-        myCompass = navigator.compass.clearWatch();
+        navigator.compass.clearWatch(myCompass);
+        _update("Gestopt", 0);
     };
     return {
         init: init,
