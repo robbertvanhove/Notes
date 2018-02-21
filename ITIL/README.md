@@ -9,9 +9,14 @@
 * willingness to pay
 * veschil BITA-SITA
 * verschil allignement - integratie
+* slides 25-36
+* RACI
+* verschil function - roles (dia 71)
 
 
 ## Notities
 * Capaciteit (objecten) R1 X T1 (scheduling) -> 2/30 service
 * CIO -> I = integration
 * benchmarking
+
+
