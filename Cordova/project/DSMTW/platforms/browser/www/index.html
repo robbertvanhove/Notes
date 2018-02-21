@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>DSMTW</title>
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar-fixed">
+        <nav class="red-background">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo center">DSMTW</a>
+                <a href="#!" data-activates="nav-mobile" class="button-collapse show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Fixed sideNav -->
+    <ul id="nav-mobile" class="side-nav">
+        <li class="logo">
+            <a class="brand-logo"></a>
+        </li>
+        <li>
+            <a href="#!" data-show="tabTimer">Timer
+                <i class="material-icons">access_time</i>
+            </a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabOpenDeur">
+                <i class="material-icons">looks_two</i>Open Deur</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabPuzzel">
+                <i class="material-icons">extension</i>Puzzel</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabIngelijst">
+                <i class="material-icons">looks_4</i>Ingelijst</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabInfo">Info
+                <i class="material-icons">info</i>
+            </a>
+        </li>
+    </ul>
+    <!----------------------------------------------------------------------------- -->
+
+    <!-- Pages -->
+    <div class="container">
+        <div class="row spa" id="tabTimer">
+            <div class="col s12">
+                <h3>Timer</h3>
+            </div>
+        </div>
+
+        <div class="row spa" id="tabOpenDeur">
+            <div class="col s12">
+                <h3>Open Deur</h3>
+            </div>
+        </div>
+        <div class="row spa" id="tabPuzzel">
+            <div class="col s12">
+                <h3>Puzzel</h3>
+            </div>
+        </div>
+        <div class="row spa" id="tabIngelijst">
+            <div class="col s12">
+                <h3>Ingelijst</h3>
+            </div>
+        </div>
+        <div class="row spa" id="tabInfo">
+            <div class="col s12">
+                <h3>Info</h3>
+                <!-- Auteur info -->
+                <h4>Auteur</h4>
+                <table class="">
+                    <tr>
+                        <td>Naam:</td>
+                        <td>Robbert Van Hove</td>
+                    </tr>
+                    <tr>
+                        <td>Telefoon:</td>
+                        <td>
+                            <a href="tel:+32499160402">+32 499 16 04 02</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>E-mail:</td>
+                        <td>
+                            <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
+                        </td>
+                    </tr>
+                </table>
+                <!-- ---------------------------------- -->
+
+                <!-- Over de app -->
+                <h4>Over de app</h4>
+                <h5>Gebruik</h5>   
+                <p>
+                    Gebruik deze app bij het spelen van het gezelschapspel "De Slimste Mens Ter Wereld".
+                </p>
+                <h5>Handleiding</h5>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="cordova.js"></script>
+    <script defer src="js/app.js"></script>
+</body>
+
+</html>
