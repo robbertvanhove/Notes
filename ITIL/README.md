@@ -1,4 +1,6 @@
 # ITIL
+## Links
+* ITIL wiki: https://wiki.en.it-processmaps.com/index.php/Main_Page
 ## Examenvragen
 * Verschil proces project; proces belangrijker dan project
 * 
