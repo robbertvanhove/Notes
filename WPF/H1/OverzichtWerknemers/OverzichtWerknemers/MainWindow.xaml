@@ -10,15 +10,43 @@
         Title="Voorbeeld databinding" Height="350" Width="525">
 
     <Window.Resources>
+        <local:Werknemers x:Key="lijstWerknemers" />
+        <DataTemplate x:Key="werknemerItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Path=Naam}"/>
+                <Label Content="{Binding Path=Voornaam}"/>
+            </StackPanel>
+        </DataTemplate>
+        <CollectionViewSource Source="{StaticResource lijstWerknemers}"
+                          x:Key="lijstWerknemersAlfabetisch" IsLiveSortingRequested="True" IsLiveGroupingRequested="True">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="Naam"/>
+            </CollectionViewSource.SortDescriptions>
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Afdeling" />
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+
     </Window.Resources>
-    
-    <DockPanel LastChildFill="True" >
+
+    <DockPanel LastChildFill="True" DataContext="{StaticResource lijstWerknemersAlfabetisch}" >
         <TextBlock DockPanel.Dock="Top" Padding="15" Background="DarkGray" 
                    Foreground="White"  FontSize="16">Overzicht werknemers</TextBlock>
-        
-        <ListBox DockPanel.Dock="Left">
+
+        <ListBox DockPanel.Dock="Left" Name="ListBoxAfdeling" ItemsSource="{Binding}"
+                 IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource werknemerItemTemplate}">
+            <ListBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Background="Gray" Content="{Binding}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListBox.GroupStyle>
+
         </ListBox>
-        
+
         <Border Width="300" Height="150" Margin="20"
                 BorderBrush="DarkGray" BorderThickness="1" Padding="8">
             <Grid Name="GridWerknemer">
@@ -26,6 +54,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -33,13 +62,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="Naam"/>
-                <TextBox Grid.Row="0" Grid.Column="1"  Text="" />
+                <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding Path=Naam}" />
                 <Label Grid.Row="1" Grid.Column="0" Content ="Voornaam"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Voornaam}" />
                 <Label Grid.Row="2" Grid.Column="0" Content="Afdeling"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Afdeling}" />
+                <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Background="Gray">
+                    <Label Content="{Binding NaamVoluit}" />
+
+                </StackPanel>
             </Grid>
-            </Border>
+        </Border>
     </DockPanel>
-    
+
 </Window>

@@ -23,6 +23,9 @@ namespace OverzichtWerknemers
         public MainWindow()
         {
             InitializeComponent();
+
+          //  Werknemer werknemer = new Werknemer("Verboven", "Jef", "ICT");
+           // GridWerknemer.DataContext = werknemer;
         }
     }
 }

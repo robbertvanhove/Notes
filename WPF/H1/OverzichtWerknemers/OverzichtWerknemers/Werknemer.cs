@@ -23,6 +23,8 @@ namespace OverzichtWerknemers
             set
             {
                 naam = value;
+                OnPropertyChanged("Naam");
+                OnPropertyChanged("NaamVoluit");
             }
         }
 
@@ -36,6 +38,8 @@ namespace OverzichtWerknemers
             set
             {
                 voornaam = value;
+                OnPropertyChanged("Voornaam");
+                OnPropertyChanged("NaamVoluit");
             }
         }
 
@@ -49,6 +53,15 @@ namespace OverzichtWerknemers
             set
             {
                 afdeling = value;
+                OnPropertyChanged("Afdeling");
+            }
+        }
+
+        public string NaamVoluit
+        {
+            get
+            {
+                return voornaam + " " + naam;
             }
         }
 
