@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link href="css/toastr.css" rel="stylesheet" />
     <title>DSMTW</title>
 </head>
 
@@ -15,7 +16,7 @@
     <div class="navbar-fixed">
         <nav class="red-background">
             <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo center">DSMTW</a>
+                <a href="#!" id="titel" class="brand-logo center">Timer</a>
                 <a href="#!" data-activates="nav-mobile" class="button-collapse show-on-large">
                     <i class="material-icons">menu</i>
                 </a>
@@ -66,31 +67,88 @@
     <!----------------------------------------------------------------------------- -->
 
     <!-- Pages -->
+    <!-- Timer sectie -->
     <div class="container">
         <div class="row spa" id="tabTimer">
-            <div class="col s12">
-                <h3>Timer</h3>
+            <div class="col s12 center-align">
+                
+                <!-- TODO:
+                        [x] Timer visualiseren en stylen
+                        [] functionaliteit speler toevoegen
+                        [x] functionaliteit start/stop
+                        [x] functionaliteit seconden +/-
+                        [] selectie welke speler
+                -->
+                <div id="timer" class="valign-wrapper">
+                    <span id="time">60</span>
+
+                </div>
+                <div class="row" id="timerControls">
+                    <div class="col s3">
+                        <button id="timerMin" class="btn-floating btn-large waves-effect waves-light red">
+                            <i class="material-icons">remove</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <input type="number" id="inputTijd" />
+                    </div>
+                    <div class="col s3">
+                        <button id="timerPlus" class="btn-floating btn-large waves-effect waves-light green">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
             </div>
         </div>
+        <!--------------------------------------------------------------------- -->
 
+        <!-- Open deur sectie -->
         <div class="row spa" id="tabOpenDeur">
             <div class="col s12">
                 <h3>Open Deur</h3>
+                <!-- TODO:
+                        [] functionaliteit vraag + antwoorden invoeren
+                        [] (later) mogelijkheid random vraag uit database
+                        [] vraag tonen -> mogelijkheid afvinken
+                        [] selectie welke speler
+                -->
             </div>
         </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Puzzel sectie -->
         <div class="row spa" id="tabPuzzel">
             <div class="col s12">
-                <h3>Puzzel</h3>
+                <!-- TODO:
+                        [] functionaliteit kernwoorden + sleutelwoorden invoeren
+                        [] (later) mogelijkheid random  uit database
+                        [] sleutelwoorden tonen -> kernwoord afvinken
+                        [] selectie welke speler
+                -->
             </div>
         </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Ingelijst sectie -->
         <div class="row spa" id="tabIngelijst">
             <div class="col s12">
-                <h3>Ingelijst</h3>
+                <!-- TODO:
+                        [] functionaliteit vraag + antwoorden invoeren
+                        [] (later) mogelijkheid random vraag uit database
+                        [] vraag tonen -> mogelijkheid afvinken
+                        [] selectie welke speler
+                -->
             </div>
         </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Info sectie -->
         <div class="row spa" id="tabInfo">
             <div class="col s12">
-                <h3>Info</h3>
                 <!-- Auteur info -->
                 <h4>Auteur</h4>
                 <table class="">
@@ -115,7 +173,7 @@
 
                 <!-- Over de app -->
                 <h4>Over de app</h4>
-                <h5>Gebruik</h5>   
+                <h5>Gebruik</h5>
                 <p>
                     Gebruik deze app bij het spelen van het gezelschapspel "De Slimste Mens Ter Wereld".
                 </p>
@@ -130,6 +188,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="cordova.js"></script>
     <script defer src="js/app.js"></script>
+    <script src="js/Timer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 
 </html>

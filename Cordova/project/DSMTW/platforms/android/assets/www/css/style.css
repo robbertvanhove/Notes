@@ -1,6 +1,11 @@
+/* General */
 .spa {
     display: none;
+    margin-top: 30px;
     
+}
+body {
+    background-color: rgba(250, 250, 250, 0.9);
 }
 #tabTimer {
     display: block;
@@ -24,9 +29,45 @@
 table {
     font-size: 15px;
 }
+
+/* Tmer */
+#timer {
+    width: 250px;
+    height: 250px;
+    background-color: #AA1300;
+    border-radius: 50%;
+    margin: 0 auto;
+    border-color: rgba(230, 19, 0, 0.8);
+    border-style: solid;
+    border-width: 5px;
+}
+
+#time{
+    margin: 0 auto;
+    font-size: 90px;
+    color: rgba(255, 255, 255, 0.9);
+
+}
+
+#timerControls{
+    margin-top: 50px;
+}
+
+#tabTimer input{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+
+
+
 /*
 # Kleuren:
-    * Hoofdkleur : AA1300
-    * Secundaire kleur : BD2903
+    * Hoofdkleur (rood) : AA1300
+    * Secundaire kleur (rood) : BD2903
+    * Geel: rgb(250, 182, 101 
+
 */
     

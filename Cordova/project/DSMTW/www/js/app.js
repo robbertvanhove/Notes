@@ -7,12 +7,65 @@ $(function () {
         $('.spa').hide();
         $('#' + $(this).data('show')).show();
         $('.button-collapse').sideNav('hide');
+
+        changeTitle($(this).data('show')); //verandert titel
+        Timer.stopTimer();
+
+
     });
 
-    
+    //Timer
+    //klik op timer
+    $("#timer").click(function () {
+        Timer.toggle();
+    });
+
+    //klik op plus
+    $("#timerPlus").click(function () {
+        var timeToCalculate = parseInt($("#inputTijd").val());
+        Timer.add(timeToCalculate);
+    });
+
+    //klik op min
+    $("#timerMin").click(function () {
+        var timeToCalculate = parseInt($("#inputTijd").val());
+        Timer.remove(timeToCalculate);
+    });
+
+
 });
 
 function onDeviceReady() {
     console.log('Device is ready');
-    
+    Timer.init();
+
 };
+
+function changeTitle(tab) {
+    var title;
+
+    switch (tab) {
+        case "tabTimer":
+            title = "Timer"
+            break;
+        case "tabOpenDeur":
+            title = "Open Deur";
+        break;
+        case tabPuzzel:
+            title = "Puzzel";
+            break;
+        case "tabIngelijst":
+            title = "Ingelijst";
+            break;
+        case "tabInfo":
+            title = "Info";
+            break;
+
+        default:
+            break;
+    }
+
+    console.log(title);
+
+    $(".brand-logo").html(title);
+}
