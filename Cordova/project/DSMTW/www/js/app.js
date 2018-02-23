@@ -9,9 +9,8 @@ $(function () {
         $('.button-collapse').sideNav('hide');
 
         changeTitle($(this).data('show')); //verandert titel
-        Timer.stopTimer();
-
-
+        Timer.stopTimer(); //stopt timer bij het verlaten van een pagina
+        
     });
 
     //Timer
@@ -19,6 +18,7 @@ $(function () {
     $("#timer").click(function () {
         Timer.toggle();
     });
+
 
     //klik op plus
     $("#timerPlus").click(function () {
@@ -30,6 +30,28 @@ $(function () {
     $("#timerMin").click(function () {
         var timeToCalculate = parseInt($("#inputTijd").val());
         Timer.remove(timeToCalculate);
+    });
+
+    //klik op reset
+    $("#timerReset").click(function () {
+        if(confirm('Bent u zeker?')){
+            Timer.reset();
+            Timer.stopTimer();
+        }
+        
+    });
+
+    //Open deur
+    //klik op zelf vraag ingeven
+    $("#openDeurEigenVraag").click(function(){
+        hideODStart(); // beginscherm verbergen
+        $("#OpenDeurVraagInput").css("display", "block");
+
+    });
+
+    $("#openDeurVolgende").click(function(){
+        OpenDeur.getQuestion();
+
     });
 
 
@@ -51,7 +73,7 @@ function changeTitle(tab) {
         case "tabOpenDeur":
             title = "Open Deur";
         break;
-        case tabPuzzel:
+        case "tabPuzzel":
             title = "Puzzel";
             break;
         case "tabIngelijst":
@@ -69,3 +91,7 @@ function changeTitle(tab) {
 
     $(".brand-logo").html(title);
 }
+function hideODStart(){
+    $("#openDeurStart").css("display", "none");
+
+};

@@ -31,7 +31,7 @@
         </li>
         <li>
             <a href="#!" data-show="tabTimer">Timer
-                <i class="material-icons">access_time</i>
+                <i class="material-icons right">access_time</i>
             </a>
         </li>
         <li>
@@ -39,28 +39,28 @@
         </li>
         <li>
             <a href="#!" data-show="tabOpenDeur">
-                <i class="material-icons">looks_two</i>Open Deur</a>
+                <i class="material-icons right">looks_two</i>Open Deur</a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li>
             <a href="#!" data-show="tabPuzzel">
-                <i class="material-icons">extension</i>Puzzel</a>
+                <i class="material-icons right">extension</i>Puzzel</a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li>
             <a href="#!" data-show="tabIngelijst">
-                <i class="material-icons">looks_4</i>Ingelijst</a>
+                <i class="material-icons right">looks_4</i>Ingelijst</a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li>
             <a href="#!" data-show="tabInfo">Info
-                <i class="material-icons">info</i>
+                <i class="material-icons right">info</i>
             </a>
         </li>
     </ul>
@@ -71,7 +71,7 @@
     <div class="container">
         <div class="row spa" id="tabTimer">
             <div class="col s12 center-align">
-                
+
                 <!-- TODO:
                         [x] Timer visualiseren en stylen
                         [] functionaliteit speler toevoegen
@@ -90,12 +90,15 @@
                         </button>
                     </div>
                     <div class="col s6">
-                        <input type="number" id="inputTijd" />
+                        <input type="number" id="inputTijd" placeholder="Seconden" />
                     </div>
                     <div class="col s3">
-                        <button id="timerPlus" class="btn-floating btn-large waves-effect waves-light green">
+                        <button id="timerPlus" class="btn-floating btn-large waves-effect  green">
                             <i class="material-icons">add</i>
                         </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="timerReset" class="waves-effect waves-light btn-large">Reset</button>
                     </div>
 
                 </div>
@@ -109,7 +112,54 @@
         <!-- Open deur sectie -->
         <div class="row spa" id="tabOpenDeur">
             <div class="col s12">
-                <h3>Open Deur</h3>
+                <div id="openDeurStart" class="row">
+                    <div class="col s6">
+                        <button id="openDeurEigenVraag" class="btn">
+                            Vraag ingeven
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <button id="openDeurWillekeurigeVraag" class="btn">
+                            Willekeurig
+                        </button>
+                    </div>
+
+                </div>
+
+                <div id="OpenDeurVraagInput">
+                    <label for="openDeurVraag">Geef uw vraag op:</label>
+                    <input id="openDeurVraag" type="text" placeholder="Vraag" />
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 1" class=".answer" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 2" class=".answer" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 3" class=".answer" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 4" class=".answer" />
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="openDeurVorige" class="btn left navButton" >
+                            Vorige
+                    </button>
+                    <button id="openDeurVolgende" class="btn right navButton" >
+                            Volgende
+                    </button>
+                    
+                </div>
+
                 <!-- TODO:
                         [] functionaliteit vraag + antwoorden invoeren
                         [] (later) mogelijkheid random vraag uit database
@@ -151,24 +201,12 @@
             <div class="col s12">
                 <!-- Auteur info -->
                 <h4>Auteur</h4>
-                <table class="">
-                    <tr>
-                        <td>Naam:</td>
-                        <td>Robbert Van Hove</td>
-                    </tr>
-                    <tr>
-                        <td>Telefoon:</td>
-                        <td>
-                            <a href="tel:+32499160402">+32 499 16 04 02</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>E-mail:</td>
-                        <td>
-                            <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
-                        </td>
-                    </tr>
-                </table>
+                <p>Naam: Robbert Van Hove
+                    <br> Telefoon:
+                    <a href="tel:+32499160402">+32 499 16 04 02</a>
+                    <br> E-mail:
+                    <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
+                </p>
                 <!-- ---------------------------------- -->
 
                 <!-- Over de app -->
@@ -189,6 +227,7 @@
     <script src="cordova.js"></script>
     <script defer src="js/app.js"></script>
     <script src="js/Timer.js"></script>
+    <script src="js/OpenDeur.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 

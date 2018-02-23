@@ -30,6 +30,10 @@ table {
     font-size: 15px;
 }
 
+.navButton {
+    width: 40%
+}
+
 /* Tmer */
 #timer {
     width: 250px;
@@ -58,7 +62,16 @@ table {
     font-size: 20px;
 }
 
+#timerReset {
+    width: 50%;
+    background-color: #BD2903;
+    font-size: 20px;
+}
 
+/* Open Deur */
+#OpenDeurVraagInput {
+    display: none;
+}
 
 
 
@@ -67,7 +80,7 @@ table {
 # Kleuren:
     * Hoofdkleur (rood) : AA1300
     * Secundaire kleur (rood) : BD2903
-    * Geel: rgb(250, 182, 101 
+    * Geel: rgb(250, 182, 101) 
 
 */
     

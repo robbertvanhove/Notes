@@ -5,7 +5,7 @@ var Timer = function () {
 
     //public
     var init = function () {
-        time = 60;
+        time = 60; //default time
         started = false;
     };
 
@@ -55,11 +55,16 @@ var Timer = function () {
         console.log(time);
 
         $("#timer").css("background-color", "rgba(200, 19, 0, 0.95)"); //make timer green when running
-        interval = setInterval(_aftellen, 1000); //run the loop
+        interval = setInterval(_countdown, 1000); //run the loop
+    };
+
+    var reset = function(){
+        setTime(60);
+        stopTimer();
     };
 
     //private
-    var _aftellen = function () {
+    var _countdown = function () {
         if (time == 1) {
             _stopTimer(); //stoptimer when at 0 secods
         }
@@ -87,6 +92,7 @@ var Timer = function () {
         setTime: setTime,
         remove: remove,
         stopTimer: stopTimer,
-        startTimer: startTimer
+        startTimer: startTimer,
+        reset: reset
     }
 }();
