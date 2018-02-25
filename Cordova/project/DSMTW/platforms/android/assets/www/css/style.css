@@ -23,9 +23,7 @@ body {
     color: white;
 }
 
-.dividerBoven{
-    margin-top: 50px;
-}
+
 table {
     font-size: 15px;
 }
@@ -33,6 +31,15 @@ table {
 .navButton {
     width: 40%
 }
+
+.yellow-color {
+    color: rgb(250, 182, 101);
+}
+
+.full-width {
+    width: 100%;
+}
+
 
 /* Tmer */
 #timer {
@@ -68,12 +75,33 @@ table {
     font-size: 20px;
 }
 
-/* Open Deur */
-#OpenDeurVraagInput {
-    display: none;
+
+/* Open Deur, Puzzel */
+#openDeurStart, #puzzelStart {
+    margin-top: 50%;
 }
+ #openDeurStart > div, #puzzelStart > div {
+     margin-top: 20px;
+ }
+
+ #openDeurStart > div > button, #puzzelStart > div > button {
+     height: 50px;
+     font-size: 20px;
+ }
 
 
+ /* Open Deur */
+ .answer-check{
+     margin-top: 5px;
+     margin-left: 10px;
+     font-size: 25px;
+ }
+
+ #openDeurReset{
+    height: 50px;
+    font-size: 20px;
+    margin-top: 10%;
+ }
 
 
 /*

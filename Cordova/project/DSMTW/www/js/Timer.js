@@ -45,6 +45,7 @@ var Timer = function () {
         clearInterval(interval); //stops interval
         started = false; //remember timer has stopped
         $("#timer").css("background-color", "#AA1300"); //make timer red again when stopped
+        $("#time").css("color", "rgba(255, 255, 255, 0.9)");
     };
 
     var startTimer = function () {
@@ -55,6 +56,7 @@ var Timer = function () {
         console.log(time);
 
         $("#timer").css("background-color", "rgba(200, 19, 0, 0.95)"); //make timer green when running
+        $("#time").css("color", "rgb(250, 182, 101) ")
         interval = setInterval(_countdown, 1000); //run the loop
     };
 
@@ -66,7 +68,7 @@ var Timer = function () {
     //private
     var _countdown = function () {
         if (time == 1) {
-            _stopTimer(); //stoptimer when at 0 secods
+            stopTimer(); //stoptimer when at 0 secods
         }
         console.log("min 1 sec");
         console.log(time);

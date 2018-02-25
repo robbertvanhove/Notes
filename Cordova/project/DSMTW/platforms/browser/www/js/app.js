@@ -1,6 +1,7 @@
 $(function () {
     document.addEventListener("deviceready", onDeviceReady, false);
     $('.button-collapse').sideNav();
+    
 
     // klik op link in navigatie
     $('.side-nav a').click(function () {
@@ -44,26 +45,57 @@ $(function () {
     //Open deur
     //klik op zelf vraag ingeven
     $("#openDeurEigenVraag").click(function(){
-        hideODStart(); // beginscherm verbergen
-        $("#OpenDeurVraagInput").css("display", "block");
+        
+        $("#openDeurStart").hide();
+        $("#OpenDeurVraagInput").show();
 
     });
 
+    //klik op volgende bij input scherm
     $("#openDeurVolgende").click(function(){
-        OpenDeur.getQuestion();
+        OpenDeur.start();
 
     });
 
+    //klik op vorige bij input
+    $("#openDeurVorige").click(function(){
+        OpenDeur.reset();
+
+    });
+
+    $("#openDeurReset").click(function(){
+        OpenDeur.reset();
+
+    });
+
+
+
+
+
+    //Open Deur + Ingelijst
+
+    //klik op checkbutton naast antwoord
+    $(document).on('click', "button.check", function () {      
+        console.log("checked");
+        $(this).removeClass("red").addClass("green"); //verander achtergrond naar groen
+        $(this).find("i").html("check"); // verander kruis in checkmark
+    });
 
 });
 
 function onDeviceReady() {
     console.log('Device is ready');
     Timer.init();
+    OpenDeur.init();
+
+    //toastr options
+    toastr.options.preventDuplicates = true; 
+    toastr.options.progressBar = true;
+    toastr.options.closeEasing = 'swing';
 
 };
 
-function changeTitle(tab) {
+function changeTitle  (tab) {
     var title;
 
     switch (tab) {
@@ -72,7 +104,7 @@ function changeTitle(tab) {
             break;
         case "tabOpenDeur":
             title = "Open Deur";
-        break;
+            break;
         case "tabPuzzel":
             title = "Puzzel";
             break;
@@ -82,16 +114,18 @@ function changeTitle(tab) {
         case "tabInfo":
             title = "Info";
             break;
-
+        case "tabInstellingen":
+            title = "Instellingen"
+        
         default:
             break;
     }
 
     console.log(title);
 
-    $(".brand-logo").html(title);
-}
-function hideODStart(){
-    $("#openDeurStart").css("display", "none");
-
+    $("#titel").html(title);
 };
+
+
+
+
