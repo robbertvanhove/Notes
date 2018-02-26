@@ -51,8 +51,12 @@ table {
 
 .blurry {
     color: transparent;
-    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    text-shadow: 0 0 15px rgba(0,0,0,0.5);
  }
+
+ .transparentBG {
+    background-color: rgba(0,0,0,0);
+  }
 
 /* Tmer */
 
@@ -136,6 +140,10 @@ table {
     border-width: 5px;
     border-color: #921405;
     border-style: solid;
+}
+
+#antwoordenPuzzel > li {
+    font-size: 20px;
 }
 
 /*

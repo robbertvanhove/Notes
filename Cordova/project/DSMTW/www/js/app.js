@@ -18,6 +18,7 @@ $(function () {
     //klik op timer
     $("#timer").click(function () {
         Timer.toggle();
+        
     });
 
 
@@ -64,6 +65,7 @@ $(function () {
 
     });
 
+    //klik op opnieuw
     $("#openDeurReset").click(function () {
         OpenDeur.reset();
 
@@ -83,22 +85,27 @@ $(function () {
     //klik op volgende bij input
     $("#puzzelVolgende").click(function(){
         Puzzel.start();
-        $("#puzzelInput").hide();
-        $("#puzzelToon").show();
+        
     });
 
     //klik op knop naast antwoord
     $(document).on("click", "a.antwoordBtn", function() {
-        
+        Puzzel.checkAnswer($(this));
     });
 
+    //klik op vorige
     $("#puzzelVorige").click(function(){
         Puzzel.reset();
     });
 
+    //klik op volgende
     $("#puzzelReset").click(function(){
         Puzzel.reset();
     });
+
+    $('.view').on('mousedown', function() {
+        console.log("heej");
+    })
 
 
     //Open Deur + Ingelijst
@@ -112,12 +119,12 @@ $(function () {
 
     //settings
     //verander zeg hallo
-    $("#settingHallo").click(function () {
+    $("#settingIntroSound").click(function () {
         if ($(this).is(":checked")) {
-            localStorage.setItem("hallo", true);
+            localStorage.setItem("introSound", true);
         }
         else{
-            localStorage.setItem("hallo", false);
+            localStorage.setItem("introSound", false);
         }
     });
 
@@ -135,16 +142,21 @@ function onDeviceReady() {
     toastr.options.closeEasing = 'swing';
 
     //settings uitvoeren
-    if (localStorage.getItem("hallo") == "true") {
-
-        alert("hallo");
-        $("#settingHallo").prop("checked", true);
+    if (localStorage.getItem("introSound") == "true") {
+        var intro = new Media("/assets/start.mp3");
+        intro.play();
+       
+        $("#settingIntroSound").prop("checked", true);
     }
+
+    
+
+    
 
 };
 
 function changeTitle(tab) {
-    var title;
+    var title;""
 
     switch (tab) {
         case "tabTimer":

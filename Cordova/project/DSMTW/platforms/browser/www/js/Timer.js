@@ -68,7 +68,8 @@ var Timer = function () {
     //private
     var _countdown = function () {
         if (time == 1) {
-            stopTimer(); //stoptimer when at 0 secods
+            stopTimer(); //stoptimer when at 0 seconds
+            Vibrator.vibrate(1000);
         }
         console.log("min 1 sec");
         console.log(time);

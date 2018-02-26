@@ -9,7 +9,23 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "be.robbert.dsmtw"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
+        },
+        "cordova-plugin-flashlight": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
+        }
+    }
 }

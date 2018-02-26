@@ -28,9 +28,6 @@ var OpenDeur = function () {
         init();
         $("#openDeurStart").show();
         $("#vraag").html("");
-
-        $("body").css("background-color", "rgba(250, 250, 250, 0.9)");
-        $("body").css("color", "black");
     };
 
 
@@ -56,10 +53,7 @@ var OpenDeur = function () {
         });
 
         lijstAntwoorden.appendTo("#OpenDeurToon > #vraag"); //lijst tonen
-
-        //kleuren veranderen
-        $("body").css("background-color", "#BD2903");
-        $("body").css("color", "rgba(250, 250, 250, 0.9)");
+        
     };
 
     var _controleEmpty = function () {
