@@ -58,7 +58,7 @@
         <li>
             <div class="divider"></div>
         </li>
-        
+
         <li>
             <a href="#!" data-show="tabInstellingen">Instellingen
                 <i class="material-icons right">settings</i>
@@ -77,8 +77,9 @@
     <!----------------------------------------------------------------------------- -->
 
     <!-- Pages -->
-    <!-- Timer sectie -->
+    
     <div class="container">
+        <!-- Timer sectie -->
         <div class="row spa" id="tabTimer">
             <div class="col s12 center-align">
 
@@ -135,7 +136,7 @@
                     </div>
 
                 </div>
-
+                <!-- input -->
                 <div id="OpenDeurVraagInput">
                     <label for="openDeurVraag">Geef uw vraag op:</label>
                     <input id="openDeurVraag" type="text" placeholder="Vraag" />
@@ -169,6 +170,8 @@
                     </button>
 
                 </div>
+
+                <!-- vraag tonen -->
                 <div id="OpenDeurToon">
                     <span id="vraag">
 
@@ -192,24 +195,130 @@
         <div class="row spa" id="tabPuzzel">
             <div class="col s12">
                 <!-- TODO:
-                        [] functionaliteit kernwoorden + sleutelwoorden invoeren
+                        [x] functionaliteit kernwoord + sleutelwoorden invoeren
                         [] (later) mogelijkheid random  uit database
-                        [] sleutelwoorden tonen -> kernwoord afvinken
+                        [] sleutelwoorden tonen -> kernwoordfvinken
                         [] selectie welke speler
+                        [] puzzel tonen
                 -->
 
                 <div id="puzzelStart" class="row">
                     <div class="col s12">
-                        <button id="PuzzelEigenVraag" class="btn full-width red-background yellow-color">
+                        <button id="puzzelEigenVraag" class="btn full-width red-background yellow-color">
                             Eigen puzzel
                         </button>
                     </div>
                     <div class="col s12">
-                        <button id="PuzzelWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                        <button id="puzzelWillekeurigeVraag" class="btn full-width red-background yellow-color">
                             Willekeurige puzzel
                         </button>
                     </div>
 
+                </div>
+
+                <!-- input -->
+                <div id="puzzelInput">
+                    <div class="card">
+                        
+                        <div class="card-content">
+                            <div id="sleutel1">
+                                <ul class="collection with-header input">
+                                    <li class="collection-header">
+                                        <label for="puzzelSleutelwoord1">Geef het eerste sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord"/>
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div id="sleutel2">
+                                <ul class="collection with-header input">
+                                    <li class="collection-header">
+                                        <label for="puzzelSleutelwoord2">Geef het tweede sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord"/>
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div id="sleutel3">
+                                <ul class="collection with-header input">
+                                    <li class="collection-header">
+                                        <label for="puzzelSleutelwoord3">Geef het derde sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord"/>
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="collection-item">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="card-tabs">
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab">
+                                    <a href="#sleutel1">1</a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#sleutel2">2</a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#sleutel3">3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <button id="puzzelVorige" class="btn left navButton red-background">
+                        Vorige
+                    </button>
+                    <button id="puzzelVolgende" class="btn right navButton red-background">
+                        Volgende
+                    </button>
+
+                </div>
+
+                <!-- puzzel tonen -->
+                <div id="puzzelToon">
+                    <table id="puzzel" ></table>
+                    <ul id="antwoordenPuzzel"></ul>
+                    <button id="puzzelReset" class="btn red-background yellow-color full-width">
+                        Opnieuw
+                    </button>
                 </div>
             </div>
         </div>
@@ -257,9 +366,21 @@
         <!-- Instellingen sectie -->
         <div class="row spa" id="tabInstellingen">
             <div class="col s12">
+                <div class="row">
+                    <div class="left">
+                        Zeg hallo
+                    </div>
+
+                    <div class="switch right">
+                        <label>
+                            Off
+                            <input id="settingHallo" type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
                 
-
-
             </div>
         </div>
     </div>
