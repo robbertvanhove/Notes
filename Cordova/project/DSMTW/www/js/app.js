@@ -1,4 +1,11 @@
+//vars
+var ingelijst = new Vraag("#ingelijstStart", "#ingelijstInput", "#ingelijstToon", "#ingelijstVraag", ".inputI", "#ingelijstOutput");
+
 $(function () {
+
+
+
+
     document.addEventListener("deviceready", onDeviceReady, false);
     $('.button-collapse').sideNav();
 
@@ -18,7 +25,7 @@ $(function () {
     //klik op timer
     $("#timer").click(function () {
         Timer.toggle();
-        
+
     });
 
 
@@ -49,14 +56,13 @@ $(function () {
     $("#openDeurEigenVraag").click(function () {
 
         $("#openDeurStart").hide();
-        $("#OpenDeurVraagInput").show();
+        $("#OpenDeurInput").show();
 
     });
 
     //klik op volgende bij input scherm
     $("#openDeurVolgende").click(function () {
         OpenDeur.start();
-
     });
 
     //klik op vorige bij input
@@ -73,8 +79,6 @@ $(function () {
 
 
 
-
-
     //Puzzel!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // klik op eigen puzzel
     $("#puzzelEigenVraag").click(function () {
@@ -83,33 +87,55 @@ $(function () {
     });
 
     //klik op volgende bij input
-    $("#puzzelVolgende").click(function(){
+    $("#puzzelVolgende").click(function () {
         Puzzel.start();
-        
+
     });
 
     //klik op knop naast antwoord
-    $(document).on("click", "a.antwoordBtn", function() {
+    $(document).on("click", "a.antwoordBtn", function () {
         Puzzel.checkAnswer($(this));
     });
 
     //klik op vorige
-    $("#puzzelVorige").click(function(){
+    $("#puzzelVorige").click(function () {
         Puzzel.reset();
     });
 
     //klik op volgende
-    $("#puzzelReset").click(function(){
+    $("#puzzelReset").click(function () {
         Puzzel.reset();
     });
 
-    $('.view').on('mousedown', function() {
+    $('.view').on('mousedown', function () {
         console.log("heej");
     })
 
     //klik op knop met oog bij antwoorden -> antwoorden zichtbaar maken
-    $("#puzzelToonAntwoorden").click(function(){
+    $("#puzzelToonAntwoorden").click(function () {
         Puzzel.viewAnswers();
+    });
+
+
+
+    //Ingelijst!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    $("#ingelijstEigenVraag").click(function () {
+        ingelijst.navigate(false, true, false);
+    });
+
+    $("#ingelijstVolgende").click(function () {
+        if (ingelijst.controleInput()) {
+            ingelijst.navigate(false, false, true);
+            ingelijst.start();
+        } else {
+            alert("Vul alles in");
+        }
+
+    });
+
+    $(document).on("click", "#ingelijstReset, #ingelijstVorige", function () {
+        ingelijst.navigate(true, false, false);
+        ingelijst.reset();
     });
 
 
@@ -127,19 +153,23 @@ $(function () {
     $("#settingIntroSound").click(function () {
         if ($(this).is(":checked")) {
             localStorage.setItem("introSound", true);
-        }
-        else{
+        } else {
             localStorage.setItem("introSound", false);
         }
     });
 
 });
 
+
+
+
+//functions
 function onDeviceReady() {
     console.log('Device is ready');
     Timer.init();
     OpenDeur.init();
     Puzzel.init();
+    ingelijst.init();
 
     //toastr options
     toastr.options.preventDuplicates = true;
@@ -150,18 +180,19 @@ function onDeviceReady() {
     if (localStorage.getItem("introSound") == "true") {
         var intro = new Media("/assets/start.mp3");
         intro.play();
-       
+
         $("#settingIntroSound").prop("checked", true);
     }
 
-    
 
-    
+
+
 
 };
 
 function changeTitle(tab) {
-    var title;""
+    var title;
+    ""
 
     switch (tab) {
         case "tabTimer":

@@ -3,7 +3,7 @@ var OpenDeur = function () {
     var answers = new Array();
     //public
     var init = function () {
-        $("#OpenDeurVraagInput").hide();
+        $("#OpenDeurInput").hide();
         $("#OpenDeurToon").hide();
     };
 
@@ -11,7 +11,7 @@ var OpenDeur = function () {
         _getQuestion();
 
         if (_controleEmpty()) {
-            $("#OpenDeurVraagInput").hide();
+            $("#OpenDeurInput").hide();
             $("#OpenDeurToon").show();
            
             _show();
@@ -45,7 +45,7 @@ var OpenDeur = function () {
 
     var _show = function () {
         $('<h4></h4>').html(question).appendTo("#OpenDeurToon > #vraag"); //titel tonen
-        var lijstAntwoorden = $("<ul class='align-center'></ul>");
+        var lijstAntwoorden = $("<ul class=''></ul>");
         answers.forEach(function (answer) {
             var html = "<button class='check btn red'><i class='material-icons'>clear</i></button> " 
             + answer;

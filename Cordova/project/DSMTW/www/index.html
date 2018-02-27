@@ -77,7 +77,7 @@
     <!----------------------------------------------------------------------------- -->
 
     <!-- Pages -->
-    
+
     <div class="container">
         <!-- Timer sectie -->
         <div class="row spa" id="tabTimer">
@@ -137,7 +137,7 @@
 
                 </div>
                 <!-- input -->
-                <div id="OpenDeurVraagInput">
+                <div id="OpenDeurInput">
                     <label for="openDeurVraag">Geef uw vraag op:</label>
                     <input id="openDeurVraag" type="text" placeholder="Vraag" />
                     <table>
@@ -225,7 +225,7 @@
                                 <ul class="collection with-header input">
                                     <li class="collection-header">
                                         <label for="puzzelSleutelwoord1">Geef het eerste sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord"/>
+                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord" />
                                     </li>
                                     <li class="collection-item">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
@@ -246,7 +246,7 @@
                                 <ul class="collection with-header input">
                                     <li class="collection-header">
                                         <label for="puzzelSleutelwoord2">Geef het tweede sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord"/>
+                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord" />
                                     </li>
                                     <li class="collection-item">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
@@ -267,7 +267,7 @@
                                 <ul class="collection with-header input">
                                     <li class="collection-header">
                                         <label for="puzzelSleutelwoord3">Geef het derde sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord"/>
+                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord" />
                                     </li>
                                     <li class="collection-item">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
@@ -310,7 +310,7 @@
 
                 <!-- puzzel tonen -->
                 <div id="puzzelToon">
-                    <table id="puzzel" ></table>
+                    <table id="puzzel"></table>
                     <ul id="antwoordenPuzzel"></ul>
                     <button id="puzzelToonAntwoorden" class="btn red-background yellow-color right">
                         <i class="material-icons">remove_red_eye</i>
@@ -327,11 +327,92 @@
         <div class="row spa" id="tabIngelijst">
             <div class="col s12">
                 <!-- TODO:
-                        [] functionaliteit vraag + antwoorden invoeren
+                        [x] functionaliteit vraag + antwoorden invoeren
                         [] (later) mogelijkheid random vraag uit database
-                        [] vraag tonen -> mogelijkheid afvinken
+                        [x] vraag tonen -> mogelijkheid afvinken
                         [] selectie welke speler
                 -->
+                <div id="ingelijstStart" class="row">
+                    <div class="col s12">
+                        <button id="ingelijstEigenVraag" class="btn full-width red-background yellow-color">
+                            Eigen vraag
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="ingelijstWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                            Willekeurige vraag
+                        </button>
+                    </div>
+                </div>
+
+                <div id="ingelijstInput">
+                    <label for="ingelijstVraag">Geef uw vraag op:</label>
+                    <input id="ingelijstVraag" type="text" placeholder="Vraag" />
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 1" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 2" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 3" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 4" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 5" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 6" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 7" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 8" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 9" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 10" class="inputI" />
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="ingelijstVorige" class="btn left navButton red-background">
+                        Vorige
+                    </button>
+                    <button id="ingelijstVolgende" class="btn right navButton red-background">
+                        Volgende
+                    </button>
+
+                </div>
+
+                <div id="ingelijstToon">
+                    <span id="ingelijstOutput" >
+
+                    </span>
+                    <button id="ingelijstReset" class="btn red-background yellow-color full-width">
+                        Opnieuw
+                    </button>
+                </div>
+
             </div>
         </div>
         <!--------------------------------------------------------------------- -->
@@ -379,7 +460,7 @@
                         </label>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -392,6 +473,7 @@
     <script src="js/sound.js"></script>
     <script src="js/OpenDeur.js"></script>
     <script src="js/Puzzel.js"></script>
+    <script src="js/Vraag.js"></script>
     <script src="js/Myhelper.js"></script>
     <script src="js/Vibrator.js"></script>
     <script src="js/toastr.js"></script>

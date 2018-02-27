@@ -17,7 +17,7 @@ body {
     background-color: #AA1300;
 }
 
-.yellow-background{
+.yellow-background {
     background-color: rgb(124, 216, 18);
 }
 
@@ -45,7 +45,8 @@ table {
     width: 100%;
 }
 
-.collection>li.collection-item, #antwoordenPuzzel > li {
+.collection>li.collection-item,
+#antwoordenPuzzel>li {
     margin-top: 10px;
 }
 
@@ -55,12 +56,19 @@ table {
 
 .blurry {
     color: transparent;
-    text-shadow: 0 0 15px rgba(0,0,0,0.5);
- }
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
- .transparentBG {
-    background-color: rgba(0,0,0,0);
-  }
+.transparentBG {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.split-list{
+    column-count: 2;
+}
+.split-list > li {
+    font-size: 15px;
+}
 
 /* Tmer */
 
@@ -96,20 +104,23 @@ table {
     font-size: 20px;
 }
 
-/* Open Deur, Puzzel */
+/* Open Deur, Puzzel, Ingelijst */
 
 #openDeurStart,
-#puzzelStart {
+#puzzelStart,
+#ingelijstStart {
     margin-top: 50%;
 }
 
 #openDeurStart>div,
-#puzzelStart>div {
+#puzzelStart>div,
+#ingelijstStart>div {
     margin-top: 20px;
 }
 
 #openDeurStart>div>button,
-#puzzelStart>div>button {
+#puzzelStart>div>button,
+#ingelijstStart>div>button{
     height: 50px;
     font-size: 20px;
 }
@@ -122,7 +133,8 @@ table {
     font-size: 25px;
 }
 
-#openDeurReset, #puzzelReset {
+#openDeurReset,
+#puzzelReset, #ingelijstReset {
     height: 50px;
     font-size: 20px;
     margin-top: 10%;
@@ -145,13 +157,12 @@ table {
     border-color: #921405;
     border-style: solid;
     font-size: 18px;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
-#antwoordenPuzzel > li {
+#antwoordenPuzzel>li {
     font-size: 20px;
 }
-
 
 /*
 # Kleuren:
