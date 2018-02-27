@@ -197,9 +197,10 @@
                 <!-- TODO:
                         [x] functionaliteit kernwoord + sleutelwoorden invoeren
                         [] (later) mogelijkheid random  uit database
-                        [] sleutelwoorden tonen -> kernwoordfvinken
+                        [x] sleutelwoorden tonen -> kernwoordfvinken
                         [] selectie welke speler
-                        [] puzzel tonen
+                        [x] puzzel tonen
+                        [] knop om blurred antwoorden te verbergen/tonen
                 -->
 
                 <div id="puzzelStart" class="row">
@@ -219,7 +220,6 @@
                 <!-- input -->
                 <div id="puzzelInput">
                     <div class="card">
-                        
                         <div class="card-content">
                             <div id="sleutel1">
                                 <ul class="collection with-header input">
@@ -284,7 +284,6 @@
 
                                 </ul>
                             </div>
-                            
                         </div>
                         <div class="card-tabs">
                             <ul class="tabs tabs-fixed-width">
@@ -301,21 +300,21 @@
                         </div>
                     </div>
 
-
-
                     <button id="puzzelVorige" class="btn left navButton red-background">
                         Vorige
                     </button>
                     <button id="puzzelVolgende" class="btn right navButton red-background">
                         Volgende
                     </button>
-
                 </div>
 
                 <!-- puzzel tonen -->
                 <div id="puzzelToon">
                     <table id="puzzel" ></table>
                     <ul id="antwoordenPuzzel"></ul>
+                    <button id="puzzelToonAntwoorden" class="btn red-background yellow-color right">
+                        <i class="material-icons">remove_red_eye</i>
+                    </button>
                     <button id="puzzelReset" class="btn red-background yellow-color full-width">
                         Opnieuw
                     </button>

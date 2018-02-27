@@ -17,6 +17,10 @@ body {
     background-color: #AA1300;
 }
 
+.yellow-background{
+    background-color: rgb(124, 216, 18);
+}
+
 .side-nav {
     background-color: #BD2903;
 }
@@ -140,11 +144,14 @@ table {
     border-width: 5px;
     border-color: #921405;
     border-style: solid;
+    font-size: 18px;
+    word-wrap:break-word;
 }
 
 #antwoordenPuzzel > li {
     font-size: 20px;
 }
+
 
 /*
 # Kleuren:

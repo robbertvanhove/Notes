@@ -14,7 +14,7 @@ $(function () {
 
     });
 
-    //Timer
+    //Timer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //klik op timer
     $("#timer").click(function () {
         Timer.toggle();
@@ -44,7 +44,7 @@ $(function () {
 
 
 
-    //Open deur
+    //Open deur!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //klik op zelf vraag ingeven
     $("#openDeurEigenVraag").click(function () {
 
@@ -75,7 +75,7 @@ $(function () {
 
 
 
-    //Puzzel
+    //Puzzel!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // klik op eigen puzzel
     $("#puzzelEigenVraag").click(function () {
         $("#puzzelStart").hide();
@@ -107,8 +107,13 @@ $(function () {
         console.log("heej");
     })
 
+    //klik op knop met oog bij antwoorden -> antwoorden zichtbaar maken
+    $("#puzzelToonAntwoorden").click(function(){
+        Puzzel.viewAnswers();
+    });
 
-    //Open Deur + Ingelijst
+
+    //Open Deur + Ingelijst!!!!!!!!!!!!!!!!!!!!
 
     //klik op checkbutton naast antwoord
     $(document).on('click', "button.check", function () {
@@ -117,7 +122,7 @@ $(function () {
         $(this).find("i").html("check"); // verander kruis in checkmark
     });
 
-    //settings
+    //settings!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //verander zeg hallo
     $("#settingIntroSound").click(function () {
         if ($(this).is(":checked")) {

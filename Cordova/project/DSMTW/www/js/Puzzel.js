@@ -78,6 +78,14 @@ var Puzzel = function () {
         aantalJuist ++;
     };
 
+    var viewAnswers = function() {
+        if($(".answerPuzzel").hasClass("blurry")){
+            $(".answerPuzzel").removeClass("blurry");
+        } else {
+            
+            $(".answerPuzzel").addClass("blurry");
+        }
+    };
 
     //private
     var _getPuzzel = function () { //haalt alle sleutelwoorden + kernwoorden op
@@ -129,7 +137,7 @@ var Puzzel = function () {
         var teller = 0;
         puzzelstukken.forEach(function (e) {
             $("<li></li>").html("<a href='#" + teller +
-                "' class='check btn red antwoordBtn'><i class='material-icons'>clear</i></a> <span class='blurry'>" +
+                "' class='check btn red antwoordBtn'><i class='material-icons'>clear</i></a> <span class='answerPuzzel blurry'>" +
                 e.sleutel +
                 "</span>").appendTo("#antwoordenPuzzel");
             teller++;
@@ -167,6 +175,7 @@ var Puzzel = function () {
         start: start,
         reset: reset,
         checkAnswer: checkAnswer,
+        viewAnswers: viewAnswers,
 
     }
 }();
