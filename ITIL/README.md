@@ -11,8 +11,14 @@
 * verschil allignement - integratie
 * slides 25-36
 * RACI
-* verschil function - roles (dia 71)
+* verschil function - roles(= RACI) (dia 71)
+* quiz (dia 72)
+* /capacity management/
+* verschil effectiviteit - efficientie
+* 
 
+###tips
+* gebruik ergens inventarisatie
 
 ## Notities
 * Capaciteit (objecten) R1 X T1 (scheduling) -> 2/30 service
