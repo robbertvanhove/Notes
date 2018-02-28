@@ -55,7 +55,13 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
         //output tonen
         $("<h4></h4>").html(this.vraag).appendTo(this.output);
         
-        var lijstAntwoorden = $("<ul class='split-list'></ul>");
+        var lijstAntwoorden = $("<ul></ul>");
+
+        if(antwoorden.length > 4) {
+            lijstAntwoorden.addClass("split-list");
+        }
+
+        
 
         antwoorden.forEach(function(antwoord){
             var html = "<button class='check btn red'><i class='material-icons'>clear</i></button> "

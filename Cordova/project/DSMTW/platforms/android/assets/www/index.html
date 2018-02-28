@@ -134,33 +134,34 @@
                             Willekeurige vraag
                         </button>
                     </div>
-
                 </div>
-                <!-- input -->
-                <div id="OpenDeurInput">
+
+                <div id="openDeurInput">
                     <label for="openDeurVraag">Geef uw vraag op:</label>
                     <input id="openDeurVraag" type="text" placeholder="Vraag" />
                     <table>
                         <tr>
                             <td>
-                                <input type="text" placeholder="Antwoord 1" class="answerOD" />
+                                <input type="text" placeholder="Antwoord 1" class="inputOD" />
+                            </td>
+                        
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 2" class="inputOD" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" placeholder="Antwoord 2" class="answerOD" />
+                                <input type="text" placeholder="Antwoord 3" class="inputOD" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" placeholder="Antwoord 3" class="answerOD" />
+                                <input type="text" placeholder="Antwoord 4" class="inputOD" />
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 4" class="answerOD" />
-                            </td>
-                        </tr>
+                       
                     </table>
                     <button id="openDeurVorige" class="btn left navButton red-background">
                         Vorige
@@ -171,16 +172,14 @@
 
                 </div>
 
-                <!-- vraag tonen -->
-                <div id="OpenDeurToon">
-                    <span id="vraag">
+                <div id="openDeurToon">
+                    <span id="openDeurOutput" >
 
                     </span>
                     <button id="openDeurReset" class="btn red-background yellow-color full-width">
                         Opnieuw
                     </button>
                 </div>
-
                 <!-- TODO:
                         [x] functionaliteit vraag + antwoorden invoeren
                         [] (later) mogelijkheid random vraag uit database
@@ -200,7 +199,7 @@
                         [x] sleutelwoorden tonen -> kernwoordfvinken
                         [] selectie welke speler
                         [x] puzzel tonen
-                        [] knop om blurred antwoorden te verbergen/tonen
+                        [x] knop om blurred antwoorden te verbergen/tonen
                 -->
 
                 <div id="puzzelStart" class="row">
@@ -460,6 +459,20 @@
                         </label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="left">
+                        Stuur mijn ingevulde vragen door: 
+                    </div>
+
+                    <div class="switch right">
+                        <label>
+                            Off
+                            <input id="settingData" type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -471,7 +484,6 @@
     <script defer src="js/app.js"></script>
     <script src="js/Timer.js"></script>
     <script src="js/sound.js"></script>
-    <script src="js/OpenDeur.js"></script>
     <script src="js/Puzzel.js"></script>
     <script src="js/Vraag.js"></script>
     <script src="js/Myhelper.js"></script>

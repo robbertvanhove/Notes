@@ -1,5 +1,6 @@
 //vars
 var ingelijst = new Vraag("#ingelijstStart", "#ingelijstInput", "#ingelijstToon", "#ingelijstVraag", ".inputI", "#ingelijstOutput");
+var opendeur = new Vraag("#openDeurStart", "#openDeurInput", "#openDeurToon", "#openDeurVraag", ".inputOD", "#openDeurOutput");
 
 $(function () {
 
@@ -55,26 +56,25 @@ $(function () {
     //klik op zelf vraag ingeven
     $("#openDeurEigenVraag").click(function () {
 
-        $("#openDeurStart").hide();
-        $("#OpenDeurInput").show();
+        opendeur.navigate(false, true, false)
 
     });
 
     //klik op volgende bij input scherm
     $("#openDeurVolgende").click(function () {
-        OpenDeur.start();
+        if (opendeur.controleInput()) {
+            opendeur.navigate(false, false, true);
+            opendeur.start();
+        } else {
+            alert("Vul alles in");
+        }
+
     });
 
     //klik op vorige bij input
-    $("#openDeurVorige").click(function () {
-        OpenDeur.reset();
-
-    });
-
-    //klik op opnieuw
-    $("#openDeurReset").click(function () {
-        OpenDeur.reset();
-
+    $(document).on("click", "#openDeurReset, #openDeurVorige", function () {
+        opendeur.navigate(true, false, false);
+        opendeur.reset();
     });
 
 
@@ -167,7 +167,7 @@ $(function () {
 function onDeviceReady() {
     console.log('Device is ready');
     Timer.init();
-    OpenDeur.init();
+    opendeur.init();
     Puzzel.init();
     ingelijst.init();
 
@@ -183,11 +183,6 @@ function onDeviceReady() {
 
         $("#settingIntroSound").prop("checked", true);
     }
-
-
-
-
-
 };
 
 function changeTitle(tab) {
