@@ -144,7 +144,7 @@
                             <td>
                                 <input type="text" placeholder="Antwoord 1" class="inputOD" />
                             </td>
-                        
+
                         </tr>
                         <tr>
                             <td>
@@ -161,7 +161,7 @@
                                 <input type="text" placeholder="Antwoord 4" class="inputOD" />
                             </td>
                         </tr>
-                       
+
                     </table>
                     <button id="openDeurVorige" class="btn left navButton red-background">
                         Vorige
@@ -173,7 +173,7 @@
                 </div>
 
                 <div id="openDeurToon">
-                    <span id="openDeurOutput" >
+                    <span id="openDeurOutput">
 
                     </span>
                     <button id="openDeurReset" class="btn red-background yellow-color full-width">
@@ -404,7 +404,7 @@
                 </div>
 
                 <div id="ingelijstToon">
-                    <span id="ingelijstOutput" >
+                    <span id="ingelijstOutput">
 
                     </span>
                     <button id="ingelijstReset" class="btn red-background yellow-color full-width">
@@ -445,7 +445,7 @@
         <!-- Instellingen sectie -->
         <div class="row spa" id="tabInstellingen">
             <div class="col s12">
-                <div class="row">
+                <!--<div class="row">
                     <div class="left">
                         Speel intro bij opstarten
                     </div>
@@ -472,7 +472,62 @@
                             On
                         </label>
                     </div>
-                </div>
+                </div> -->
+
+
+                <!-- algemeen ---->
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Algemeen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Speel intro bij opstarten:</td>
+                            <td>
+                                <div class="switch right">
+                                    <label>
+                                        Off
+                                        <input class="setting" data-setting="introSound" type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+
+                <!--Timer ------>
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>Timer</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Trillen als de timer op 0 springt:</td>
+                            <td>
+                                <div class="switch right">
+                                    <label>
+                                        Off
+                                        <input class="setting" data-setting="vibrateOn0" type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+
+                </table>
 
             </div>
         </div>

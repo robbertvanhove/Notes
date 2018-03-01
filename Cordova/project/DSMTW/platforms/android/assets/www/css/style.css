@@ -1,8 +1,11 @@
 /* General */
 
+.btn:active, .btn:focus{
+    background-color: rgba(250, 182, 101, 0.5);;
+}
 .spa {
     display: none;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 body {

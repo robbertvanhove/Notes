@@ -56,7 +56,13 @@ $(function () {
     //klik op zelf vraag ingeven
     $("#openDeurEigenVraag").click(function () {
 
-        opendeur.navigate(false, true, false)
+        opendeur.navigate(false, true, false);
+
+    });
+    $("#openDeurWillekeurigeVraag").click(function () {
+
+        opendeur.navigate(false, true, false);
+        opendeur.selectRandomInput();
 
     });
 
@@ -150,12 +156,15 @@ $(function () {
 
     //settings!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //verander zeg hallo
-    $("#settingIntroSound").click(function () {
+    $(".setting").click(function () {
+        var setting = $(this).data("setting");
+        var checked = false;
+        console.log(setting);
+
         if ($(this).is(":checked")) {
-            localStorage.setItem("introSound", true);
-        } else {
-            localStorage.setItem("introSound", false);
-        }
+            checked = true;
+        } 
+        localStorage.setItem(setting, checked);
     });
 
 });
@@ -170,6 +179,7 @@ function onDeviceReady() {
     opendeur.init();
     Puzzel.init();
     ingelijst.init();
+    initializeSettings();
 
     //toastr options
     toastr.options.preventDuplicates = true;
@@ -177,17 +187,17 @@ function onDeviceReady() {
     toastr.options.closeEasing = 'swing';
 
     //settings uitvoeren
-    if (localStorage.getItem("introSound") == "true") {
+    /*if (localStorage.getItem("introSound") == "true") {
         var intro = new Media("/assets/start.mp3");
         intro.play();
 
         $("#settingIntroSound").prop("checked", true);
-    }
-};
+    }*/
+
+}
 
 function changeTitle(tab) {
     var title;
-    ""
 
     switch (tab) {
         case "tabTimer":
@@ -215,4 +225,24 @@ function changeTitle(tab) {
     console.log(title);
 
     $("#titel").html(title);
-};
+}
+
+function initializeSettings(){
+    $(".setting").each(function(){
+        var setting = $(this).data("setting");
+        
+        //check exists
+        if(localStorage.getItem(setting)){
+            if(localStorage.getItem(setting) == "true"){
+                $(this).prop("checked", true);
+            }
+           
+        } else {
+            localStorage.setItem(setting, false); //put setting in localstorage
+        }
+    });
+}
+
+function executeStartupSettings(){
+
+}

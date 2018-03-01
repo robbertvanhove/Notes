@@ -101,4 +101,23 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
 
         return filledIn;
     };
+
+    this.selectRandomInput = function(soort){
+        var question = "random";
+        var answers = ["answer 1", "answer 2", "answer3", "answer4"];
+        var counter = 0;
+
+        $(this.inputVraag).val(question);
+
+        $(this.inputAntwoorden).each(function () { //antwoorden ophalen
+           $(this).val(answers[counter]);
+           counter++;
+        });
+
+       
+
+
+    };
+
+
 }

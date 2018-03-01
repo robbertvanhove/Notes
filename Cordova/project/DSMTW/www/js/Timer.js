@@ -16,7 +16,7 @@ var Timer = function () {
         }
     };
     var toggle = function () {
-        if (started == false) {
+        if (!started) {
             startTimer();
         } else {
             stopTimer();
@@ -38,12 +38,14 @@ var Timer = function () {
             console.log(added);
             time -= added;
             _updateTimer();
+            
         }
     };
 
     var stopTimer = function () {
         clearInterval(interval); //stops interval
         started = false; //remember timer has stopped
+
         $("#timer").css("background-color", "#AA1300"); //make timer red again when stopped
         $("#time").css("color", "rgba(255, 255, 255, 0.9)");
     };
@@ -67,10 +69,6 @@ var Timer = function () {
 
     //private
     var _countdown = function () {
-        if (time == 1) {
-            stopTimer(); //stoptimer when at 0 seconds
-            Vibrator.vibrate(1000);
-        }
         console.log("min 1 sec");
         console.log(time);
 
@@ -83,6 +81,14 @@ var Timer = function () {
     var _updateTimer = function () {
         if (time < 0) {
             time = 0;
+            
+            stopTimer();
+            if(localStorage.getItem("vibrateOn0") == "true"){
+                Vibrator.vibrate(1000);
+                console.log("vibreert nu voor 1s");
+                
+            }
+            
         }
 
         $("#time").html(time.toString()); //show time
