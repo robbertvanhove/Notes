@@ -24,6 +24,9 @@
         },
         "cordova-plugin-flashlight": {
             "PACKAGE_NAME": "be.robbert.dsmtw"
+        },
+        "cordova-plugin-appversion": {
+            "PACKAGE_NAME": "be.robbert.dsmtw"
         }
     },
     "dependent_plugins": {},
@@ -256,6 +259,14 @@
             "clobbers": [
                 "window.plugins.flashlight"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+            "id": "cordova-plugin-appversion.RareloopAppVersion",
+            "pluginId": "cordova-plugin-appversion",
+            "clobbers": [
+                "AppVersion"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -264,6 +275,7 @@
         "cordova-plugin-file": "6.0.1",
         "cordova-plugin-compat": "1.2.0",
         "cordova-plugin-vibration": "3.0.1",
-        "cordova-plugin-flashlight": "3.2.0"
+        "cordova-plugin-flashlight": "3.2.0",
+        "cordova-plugin-appversion": "1.0.0"
     }
 }

@@ -90,13 +90,13 @@
                         [x] functionaliteit seconden +/-
                         [] selectie welke speler
                 -->
-                <div id="timer" class="valign-wrapper">
-                    <span id="time">60</span>
+                <div id="timer" class="valign-wrapper z-depth-5">
+                    <span id="time" class="">60</span>
 
                 </div>
                 <div class="row" id="timerControls">
                     <div class="col s3">
-                        <button id="timerMin" class="btn-floating btn-large waves-effect waves-light red">
+                        <button id="timerMin" class="btn-floating btn-large waves-effect waves-light red ">
                             <i class="material-icons">remove</i>
                         </button>
                     </div>
@@ -218,319 +218,359 @@
 
                 <!-- input -->
                 <div id="puzzelInput">
-                    <div class="card">
-                        <div class="card-content">
-                            <div id="sleutel1">
-                                <ul class="collection with-header input">
-                                    <li class="collection-header">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header" id="s1">
+                                Sleutelwoord 1   
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
                                         <label for="puzzelSleutelwoord1">Geef het eerste sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord" />
+                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord" data-target="s1"/>
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
-                                        <input type="text" placeholder="Kernwoord" class="answerP" />
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div id="sleutel2">
-                                <ul class="collection with-header input">
-                                    <li class="collection-header">
-                                        <label for="puzzelSleutelwoord2">Geef het tweede sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord" />
-                                    </li>
-                                    <li class="collection-item">
-                                        <input type="text" placeholder="Kernwoord" class="answerP" />
-                                    </li>
-                                    <li class="collection-item">
-                                        <input type="text" placeholder="Kernwoord" class="answerP" />
-                                    </li>
-                                    <li class="collection-item">
-                                        <input type="text" placeholder="Kernwoord" class="answerP" />
-                                    </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
 
                                 </ul>
                             </div>
-                            <div id="sleutel3">
-                                <ul class="collection with-header input">
-                                    <li class="collection-header">
+                        </li>
+                        <li>
+                            <div class="collapsible-header" id="s2">
+                                Sleutelwoord 2  
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
+                                        <label for="puzzelSleutelwoord2">Geef het tweed sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord"  data-target="s2" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header" id="s3">
+                                Sleutelwoord 3
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
                                         <label for="puzzelSleutelwoord3">Geef het derde sleutelwoord:</label>
-                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord" />
+                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord"  data-target="s3" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
-                                    <li class="collection-item">
+                                    <li class="">
                                         <input type="text" placeholder="Kernwoord" class="answerP" />
                                     </li>
 
                                 </ul>
                             </div>
-                        </div>
-                        <div class="card-tabs">
-                            <ul class="tabs tabs-fixed-width">
-                                <li class="tab">
-                                    <a href="#sleutel1">1</a>
-                                </li>
-                                <li class="tab">
-                                    <a href="#sleutel2">2</a>
-                                </li>
-                                <li class="tab">
-                                    <a href="#sleutel3">3</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
 
-                    <button id="puzzelVorige" class="btn left navButton red-background">
-                        Vorige
-                    </button>
-                    <button id="puzzelVolgende" class="btn right navButton red-background">
-                        Volgende
-                    </button>
-                </div>
+                
 
-                <!-- puzzel tonen -->
-                <div id="puzzelToon">
-                    <table id="puzzel"></table>
-                    <ul id="antwoordenPuzzel"></ul>
-                    <button id="puzzelToonAntwoorden" class="btn red-background yellow-color right">
-                        <i class="material-icons">remove_red_eye</i>
-                    </button>
-                    <button id="puzzelReset" class="btn red-background yellow-color full-width">
-                        Opnieuw
-                    </button>
-                </div>
+                <button id="puzzelVorige" class="btn left navButton red-background">
+                    Vorige
+                </button>
+                <button id="puzzelVolgende" class="btn right navButton red-background">
+                    Volgende
+                </button>
+            </div>
+
+            <!-- puzzel tonen -->
+            <div id="puzzelToon">
+                <table id="puzzel" class="z-depth-5"></table>
+                <ul id="antwoordenPuzzel"></ul>
+                <button id="puzzelToonAntwoorden" class="btn red-background yellow-color right">
+                    <i class="material-icons">remove_red_eye</i>
+                </button>
+                <button id="puzzelReset" class="btn red-background yellow-color full-width">
+                    Opnieuw
+                </button>
             </div>
         </div>
-        <!--------------------------------------------------------------------- -->
+    </div>
+    <!--------------------------------------------------------------------- -->
 
-        <!-- Ingelijst sectie -->
-        <div class="row spa" id="tabIngelijst">
-            <div class="col s12">
-                <!-- TODO:
+    <!-- Ingelijst sectie -->
+    <div class="row spa" id="tabIngelijst">
+        <div class="col s12">
+            <!-- TODO:
                         [x] functionaliteit vraag + antwoorden invoeren
                         [] (later) mogelijkheid random vraag uit database
                         [x] vraag tonen -> mogelijkheid afvinken
                         [] selectie welke speler
                 -->
-                <div id="ingelijstStart" class="row">
-                    <div class="col s12">
-                        <button id="ingelijstEigenVraag" class="btn full-width red-background yellow-color">
-                            Eigen vraag
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <button id="ingelijstWillekeurigeVraag" class="btn full-width red-background yellow-color">
-                            Willekeurige vraag
-                        </button>
-                    </div>
-                </div>
-
-                <div id="ingelijstInput">
-                    <label for="ingelijstVraag">Geef uw vraag op:</label>
-                    <input id="ingelijstVraag" type="text" placeholder="Vraag" />
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 1" class="inputI" />
-                            </td>
-
-                            <td>
-                                <input type="text" placeholder="Antwoord 2" class="inputI" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 3" class="inputI" />
-                            </td>
-
-                            <td>
-                                <input type="text" placeholder="Antwoord 4" class="inputI" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 5" class="inputI" />
-                            </td>
-
-                            <td>
-                                <input type="text" placeholder="Antwoord 6" class="inputI" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 7" class="inputI" />
-                            </td>
-
-                            <td>
-                                <input type="text" placeholder="Antwoord 8" class="inputI" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Antwoord 9" class="inputI" />
-                            </td>
-
-                            <td>
-                                <input type="text" placeholder="Antwoord 10" class="inputI" />
-                            </td>
-                        </tr>
-                    </table>
-                    <button id="ingelijstVorige" class="btn left navButton red-background">
-                        Vorige
-                    </button>
-                    <button id="ingelijstVolgende" class="btn right navButton red-background">
-                        Volgende
-                    </button>
-
-                </div>
-
-                <div id="ingelijstToon">
-                    <span id="ingelijstOutput">
-
-                    </span>
-                    <button id="ingelijstReset" class="btn red-background yellow-color full-width">
-                        Opnieuw
+            <div id="ingelijstStart" class="row">
+                <div class="col s12">
+                    <button id="ingelijstEigenVraag" class="btn full-width red-background yellow-color">
+                        Eigen vraag
                     </button>
                 </div>
-
+                <div class="col s12">
+                    <button id="ingelijstWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                        Willekeurige vraag
+                    </button>
+                </div>
             </div>
-        </div>
-        <!--------------------------------------------------------------------- -->
 
-        <!-- Info sectie -->
-        <div class="row spa" id="tabInfo">
-            <div class="col s12">
-                <!-- Auteur info -->
-                <h4>Auteur</h4>
-                <p>Naam: Robbert Van Hove
-                    <br> Telefoon:
-                    <a href="tel:+32499160402">+32 499 16 04 02</a>
-                    <br> E-mail:
-                    <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
-                </p>
-                <!-- ---------------------------------- -->
+            <div id="ingelijstInput">
+                <label for="ingelijstVraag">Geef uw vraag op:</label>
+                <input id="ingelijstVraag" type="text" placeholder="Vraag" />
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Antwoord 1" class="inputI" />
+                        </td>
 
-                <!-- Over de app -->
-                <h4>Over de app</h4>
-                <h5>Gebruik</h5>
-                <p>
-                    Gebruik deze app bij het spelen van het gezelschapspel "De Slimste Mens Ter Wereld".
-                </p>
-                <h5>Handleiding</h5>
+                        <td>
+                            <input type="text" placeholder="Antwoord 2" class="inputI" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Antwoord 3" class="inputI" />
+                        </td>
 
+                        <td>
+                            <input type="text" placeholder="Antwoord 4" class="inputI" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Antwoord 5" class="inputI" />
+                        </td>
 
-            </div>
-        </div>
-        <!--------------------------------------------------------------------- -->
+                        <td>
+                            <input type="text" placeholder="Antwoord 6" class="inputI" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Antwoord 7" class="inputI" />
+                        </td>
 
-        <!-- Instellingen sectie -->
-        <div class="row spa" id="tabInstellingen">
-            <div class="col s12">
-                <!--<div class="row">
-                    <div class="left">
-                        Speel intro bij opstarten
-                    </div>
+                        <td>
+                            <input type="text" placeholder="Antwoord 8" class="inputI" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Antwoord 9" class="inputI" />
+                        </td>
 
-                    <div class="switch right">
-                        <label>
-                            Off
-                            <input id="settingIntroSound" type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="left">
-                        Stuur mijn ingevulde vragen door: 
-                    </div>
-
-                    <div class="switch right">
-                        <label>
-                            Off
-                            <input id="settingData" type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-                    </div>
-                </div> -->
-
-
-                <!-- algemeen ---->
-                <table class="">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Algemeen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Speel intro bij opstarten:</td>
-                            <td>
-                                <div class="switch right">
-                                    <label>
-                                        Off
-                                        <input class="setting" data-setting="introSound" type="checkbox">
-                                        <span class="lever"></span>
-                                        On
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-
-
+                        <td>
+                            <input type="text" placeholder="Antwoord 10" class="inputI" />
+                        </td>
+                    </tr>
                 </table>
-
-                <!--Timer ------>
-                <table class="">
-                    <thead>
-                        <tr>
-                            <th>Timer</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Trillen als de timer op 0 springt:</td>
-                            <td>
-                                <div class="switch right">
-                                    <label>
-                                        Off
-                                        <input class="setting" data-setting="vibrateOn0" type="checkbox">
-                                        <span class="lever"></span>
-                                        On
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-
-
-
-                </table>
+                <button id="ingelijstVorige" class="btn left navButton red-background">
+                    Vorige
+                </button>
+                <button id="ingelijstVolgende" class="btn right navButton red-background">
+                    Volgende
+                </button>
 
             </div>
+
+            <div id="ingelijstToon">
+                <span id="ingelijstOutput">
+
+                </span>
+                <button id="ingelijstReset" class="btn red-background yellow-color full-width">
+                    Opnieuw
+                </button>
+            </div>
+
         </div>
+    </div>
+    <!--------------------------------------------------------------------- -->
+
+    <!-- Info sectie -->
+    <div class="row spa" id="tabInfo">
+        <div class="col s12">
+            <!-- Auteur info -->
+            <h4>Auteur</h4>
+            <p>Naam: Robbert Van Hove
+                <br> Telefoon:
+                <a href="tel:+32499160402">+32 499 16 04 02</a>
+                <br> E-mail:
+                <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
+            </p>
+            <!-- ---------------------------------- -->
+
+            <!-- Over de app -->
+            <h4>Over de app</h4>
+            <h5>Gebruik</h5>
+            <p>
+                Gebruik deze app bij het spelen van het gezelschapspel "De Slimste Mens Ter Wereld".
+            </p>
+            <h5>Handleiding</h5>
+
+
+        </div>
+    </div>
+    <!--------------------------------------------------------------------- -->
+
+    <!-- Instellingen sectie -->
+    <div class="row spa" id="tabInstellingen">
+        <div class="col s12">
+            <!-- algemeen ---->
+
+
+            <!--Timer ------>
+
+
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">Algemeen</div>
+                    <div class="collapsible-body">
+                        <table class="bordered">
+                            <tr>
+                                <td>Speel intro bij opstarten:</td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="introSound" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Timer</div>
+                    <div class="collapsible-body">
+                        <table class="bordered">
+                            <tr>
+                                <td>Trillen als de timer op 0 springt:</td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="vibrateOn0" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Open Deur</div>
+                    <div class="collapsible-body">
+                        <table class="bordered"> 
+                            <tr>
+                                <td>Stuur mijn ingevulde data door: </td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="ODSendData" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Puzzel</div>
+                    <div class="collapsible-body">
+                        <table class="bordered">
+                            <tr>
+                                <td>Stuur mijn ingevulde data door: </td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="PuzzelSendData" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Ingelijst</div>
+                    <div class="collapsible-body">
+                        <table class="bordered">
+                            <tr>
+                                <td>Stuur mijn ingevulde data door: </td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="IngelijstSendData" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Doe iets: </td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="IngelijstDoe" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Doe nog iets: </td>
+                                <td>
+                                    <div class="switch right">
+                                        <label>
+                                            <input class="setting" data-setting="IngelijstDoeNog" type="checkbox">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -543,7 +583,6 @@
     <script src="js/Vraag.js"></script>
     <script src="js/Myhelper.js"></script>
     <script src="js/Vibrator.js"></script>
-    <script src="js/toastr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 

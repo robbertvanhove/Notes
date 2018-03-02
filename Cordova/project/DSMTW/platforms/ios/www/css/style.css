@@ -6,7 +6,14 @@
 .spa {
     display: none;
     margin-top: 20px;
+    
 }
+
+.collapsible-header.active {
+    background-color: #921405;
+    color: white;
+}
+
 
 body {
     background-color: rgba(250, 250, 250, 0.9);

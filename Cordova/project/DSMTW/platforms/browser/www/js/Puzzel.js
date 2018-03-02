@@ -21,7 +21,7 @@ var Puzzel = function () {
             $("#puzzelInput").hide();
             $("#puzzelToon").show();
         } else {
-            alert("Vul alles in!"); //melding tonen om alles in te vullen
+            Materialize.toast("Gelieve alles in te vullen!") //melding tonen om alles in te vullen
 
             puzzelstukken = new Array();
             keywords = new Array();
@@ -89,7 +89,7 @@ var Puzzel = function () {
 
     //private
     var _getPuzzel = function () { //haalt alle sleutelwoorden + kernwoorden op
-        $(".card-content > div > ul").each(function () {
+        $(".collapsible > li > div > ul").each(function () {
             var sleutel = $(this).find("li > input.sleutelwoord").val(); //alle sleutelwoorden ophalen
             console.log(sleutel);
             var kernwoorden = new Array();

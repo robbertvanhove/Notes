@@ -48,6 +48,7 @@ $(function () {
             Timer.reset();
             Timer.stopTimer();
         }
+
     });
 
 
@@ -72,7 +73,7 @@ $(function () {
             opendeur.navigate(false, false, true);
             opendeur.start();
         } else {
-            alert("Vul alles in");
+            Materialize.toast("Gelieve alles in te vullen!", 4000);
         }
 
     });
@@ -123,6 +124,21 @@ $(function () {
     });
 
 
+    //sleutelwoord typen
+    $(document).on("change keyup", ".sleutelwoord" ,function () {
+        var target = "#" + $(this).data("target");
+        var inhoud = $(this).val();
+
+        if (!inhoud) { //check empty
+            inhoud = $(this).attr("placeholder");
+        }
+
+        $(target).html(inhoud); //colapse-title = input
+    });
+
+
+
+
 
     //Ingelijst!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     $("#ingelijstEigenVraag").click(function () {
@@ -134,7 +150,7 @@ $(function () {
             ingelijst.navigate(false, false, true);
             ingelijst.start();
         } else {
-            alert("Vul alles in");
+            Materialize.toast("Gelieve alles in te vullen!", 4000);
         }
 
     });
@@ -148,7 +164,7 @@ $(function () {
     //Open Deur + Ingelijst!!!!!!!!!!!!!!!!!!!!
 
     //klik op checkbutton naast antwoord
-    $(document).on('click', "button.check", function () {
+    $(document).on("click", "button.check", function () {
         console.log("checked");
         $(this).removeClass("red").addClass("green"); //verander achtergrond naar groen
         $(this).find("i").html("check"); // verander kruis in checkmark
@@ -163,7 +179,7 @@ $(function () {
 
         if ($(this).is(":checked")) {
             checked = true;
-        } 
+        }
         localStorage.setItem(setting, checked);
     });
 
@@ -186,13 +202,8 @@ function onDeviceReady() {
     toastr.options.progressBar = true;
     toastr.options.closeEasing = 'swing';
 
-    //settings uitvoeren
-    /*if (localStorage.getItem("introSound") == "true") {
-        var intro = new Media("/assets/start.mp3");
-        intro.play();
-
-        $("#settingIntroSound").prop("checked", true);
-    }*/
+    //html
+    $(".sleutelwoord, answerP").attr("maxlength", "40"); //sets maxlength in puzzel inputs
 
 }
 
@@ -227,22 +238,22 @@ function changeTitle(tab) {
     $("#titel").html(title);
 }
 
-function initializeSettings(){
-    $(".setting").each(function(){
+function initializeSettings() {
+    $(".setting").each(function () {
         var setting = $(this).data("setting");
-        
+
         //check exists
-        if(localStorage.getItem(setting)){
-            if(localStorage.getItem(setting) == "true"){
+        if (localStorage.getItem(setting)) {
+            if (localStorage.getItem(setting) == "true") {
                 $(this).prop("checked", true);
             }
-           
+
         } else {
             localStorage.setItem(setting, false); //put setting in localstorage
         }
     });
 }
 
-function executeStartupSettings(){
+function executeStartupSettings() {
 
 }
