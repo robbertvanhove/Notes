@@ -26,6 +26,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="icon.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="orientation" value="portrait" />
 </widget>

@@ -228,6 +228,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.flashlight"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+        "id": "cordova-plugin-appversion.RareloopAppVersion",
+        "pluginId": "cordova-plugin-appversion",
+        "clobbers": [
+            "AppVersion"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -238,7 +246,8 @@ module.exports.metadata =
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-vibration": "3.0.1",
-    "cordova-plugin-flashlight": "3.2.0"
+    "cordova-plugin-flashlight": "3.2.0",
+    "cordova-plugin-appversion": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

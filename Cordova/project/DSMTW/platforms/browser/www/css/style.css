@@ -80,6 +80,10 @@ table {
     font-size: 15px;
 }
 
+.collapsible-header.active > i {
+    visibility: hidden;
+}
+
 /* Tmer */
 
 #timer {

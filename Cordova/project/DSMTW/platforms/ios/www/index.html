@@ -30,7 +30,7 @@
             <a class="brand-logo"></a>
         </li>
         <li>
-            <a href="#!" data-show="tabTimer">Timer
+            <a href="#!" data-show="tabTimer" data-title="Timer">Timer
                 <i class="material-icons right">access_time</i>
             </a>
         </li>
@@ -38,21 +38,21 @@
             <div class="divider"></div>
         </li>
         <li>
-            <a href="#!" data-show="tabOpenDeur">
+            <a href="#!" data-show="tabOpenDeur" data-title="Open Deur">
                 <i class="material-icons right">looks_two</i>Open Deur</a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li>
-            <a href="#!" data-show="tabPuzzel">
+            <a href="#!" data-show="tabPuzzel" data-title="Puzzel">
                 <i class="material-icons right">extension</i>Puzzel</a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li>
-            <a href="#!" data-show="tabIngelijst">
+            <a href="#!" data-show="tabIngelijst" data-title="Ingelijst">
                 <i class="material-icons right">looks_4</i>Ingelijst</a>
         </li>
         <li>
@@ -60,7 +60,7 @@
         </li>
 
         <li>
-            <a href="#!" data-show="tabInstellingen">Instellingen
+            <a href="#!" data-show="tabInstellingen" data-title="Instellingen">Instellingen
                 <i class="material-icons right">settings</i>
             </a>
         </li>
@@ -68,7 +68,7 @@
             <div class="divider"></div>
         </li>
         <li>
-            <a href="#!" data-show="tabInfo">Info
+            <a href="#!" data-show="tabInfo" data-title="Info">Info
                 <i class="material-icons right">info</i>
             </a>
         </li>
@@ -182,9 +182,8 @@
                 </div>
                 <!-- TODO:
                         [x] functionaliteit vraag + antwoorden invoeren
-                        [] (later) mogelijkheid random vraag uit database
+                        [x] (later) mogelijkheid random vraag uit database
                         [x] vraag tonen -> mogelijkheid afvinken
-                        [] selectie welke speler
                 -->
             </div>
         </div>
@@ -197,7 +196,6 @@
                         [x] functionaliteit kernwoord + sleutelwoorden invoeren
                         [] (later) mogelijkheid random  uit database
                         [x] sleutelwoorden tonen -> kernwoordfvinken
-                        [] selectie welke speler
                         [x] puzzel tonen
                         [x] knop om blurred antwoorden te verbergen/tonen
                 -->
@@ -218,10 +216,10 @@
 
                 <!-- input -->
                 <div id="puzzelInput">
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <ul class="collapsible popout" data-collapsible="accordion">
                         <li>
                             <div class="collapsible-header" id="s1">
-                                Sleutelwoord 1   
+                                <span>Sleutelwoord 1</span> <i class="material-icons">keyboard_arrow_right</i>
                             </div>
                             <div class="collapsible-body">
                                 <ul class="">
@@ -247,8 +245,7 @@
                         </li>
                         <li>
                             <div class="collapsible-header" id="s2">
-                                Sleutelwoord 2  
-                            </div>
+                                <span>Sleutelwoord 2</span> <i class="material-icons">keyboard_arrow_right</i>                            </div>
                             <div class="collapsible-body">
                                 <ul class="">
                                     <li class="">
@@ -273,7 +270,7 @@
                         </li>
                         <li>
                             <div class="collapsible-header" id="s3">
-                                Sleutelwoord 3
+                                <span>Sleutelwoord 3</span> <i class="material-icons">keyboard_arrow_right</i>
                             </div>
                             <div class="collapsible-body">
                                 <ul class="">
@@ -329,9 +326,9 @@
         <div class="col s12">
             <!-- TODO:
                         [x] functionaliteit vraag + antwoorden invoeren
-                        [] (later) mogelijkheid random vraag uit database
+                        [x] (later) mogelijkheid random vraag uit database
                         [x] vraag tonen -> mogelijkheid afvinken
-                        [] selectie welke speler
+                      
                 -->
             <div id="ingelijstStart" class="row">
                 <div class="col s12">
@@ -453,9 +450,9 @@
             <!--Timer ------>
 
 
-            <ul class="collapsible" data-collapsible="accordion">
+            <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header">Algemeen</div>
+                    <div class="collapsible-header">Algemeen <i class="material-icons">keyboard_arrow_right</i></div>
                     <div class="collapsible-body">
                         <table class="bordered">
                             <tr>
@@ -474,7 +471,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header">Timer</div>
+                    <div class="collapsible-header">Timer <i class="material-icons">keyboard_arrow_right</i></div>
                     <div class="collapsible-body">
                         <table class="bordered">
                             <tr>
@@ -492,7 +489,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header">Open Deur</div>
+                    <div class="collapsible-header">Open Deur <i class="material-icons">keyboard_arrow_right</i></div>
                     <div class="collapsible-body">
                         <table class="bordered"> 
                             <tr>
@@ -510,7 +507,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header">Puzzel</div>
+                    <div class="collapsible-header">Puzzel <i class="material-icons">keyboard_arrow_right</i></div>
                     <div class="collapsible-body">
                         <table class="bordered">
                             <tr>
@@ -528,7 +525,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header">Ingelijst</div>
+                    <div class="collapsible-header">Ingelijst <i class="material-icons">keyboard_arrow_right</i></div>
                     <div class="collapsible-body">
                         <table class="bordered">
                             <tr>

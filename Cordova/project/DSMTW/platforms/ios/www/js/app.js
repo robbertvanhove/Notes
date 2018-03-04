@@ -4,23 +4,8 @@ var opendeur = new Vraag("#openDeurStart", "#openDeurInput", "#openDeurToon", "#
 
 $(function () {
 
-
-
-
     document.addEventListener("deviceready", onDeviceReady, false);
     $('.button-collapse').sideNav();
-
-
-    // klik op link in navigatie
-    $('.side-nav a').click(function () {
-        $('.spa').hide();
-        $('#' + $(this).data('show')).show();
-        $('.button-collapse').sideNav('hide');
-
-        changeTitle($(this).data('show')); //verandert titel
-        Timer.stopTimer(); //stopt timer bij het verlaten van een pagina
-
-    });
 
     //Timer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //klik op timer
@@ -60,10 +45,12 @@ $(function () {
         opendeur.navigate(false, true, false);
 
     });
+
+    //klik op willekeurige vraag
     $("#openDeurWillekeurigeVraag").click(function () {
 
         opendeur.navigate(false, true, false);
-        opendeur.selectRandomInput();
+        opendeur.selectRandomInput("OD");
 
     });
 
@@ -125,7 +112,7 @@ $(function () {
 
 
     //sleutelwoord typen
-    $(document).on("change keyup", ".sleutelwoord" ,function () {
+    $(document).on("change keyup", ".sleutelwoord", function () {
         var target = "#" + $(this).data("target");
         var inhoud = $(this).val();
 
@@ -133,7 +120,7 @@ $(function () {
             inhoud = $(this).attr("placeholder");
         }
 
-        $(target).html(inhoud); //colapse-title = input
+        $(target + "> span").html(inhoud); //colapse-title = input
     });
 
 
@@ -152,6 +139,13 @@ $(function () {
         } else {
             Materialize.toast("Gelieve alles in te vullen!", 4000);
         }
+
+    });
+
+    $("#ingelijstWillekeurigeVraag").click(function () {
+
+        ingelijst.navigate(false, true, false);
+        ingelijst.selectRandomInput("ingelijst");
 
     });
 
@@ -183,77 +177,34 @@ $(function () {
         localStorage.setItem(setting, checked);
     });
 
+    //algemeen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // klik op link in navigatie
+    $('.side-nav a').click(function () {
+        $('.spa').hide();
+        $('#' + $(this).data('show')).show();
+        $('.button-collapse').sideNav('hide');
+        $("#titel").html($(this).data("title"));
+
+        Timer.stopTimer(); //stopt timer bij het verlaten van een pagina
+
+    });
+
 });
 
 
 
 
-//functions
+
 function onDeviceReady() {
     console.log('Device is ready');
     Timer.init();
     opendeur.init();
     Puzzel.init();
     ingelijst.init();
-    initializeSettings();
+    MyHelper.initializeSettings();
 
-    //toastr options
-    toastr.options.preventDuplicates = true;
-    toastr.options.progressBar = true;
-    toastr.options.closeEasing = 'swing';
-
-    //html
+    //html settings
     $(".sleutelwoord, answerP").attr("maxlength", "40"); //sets maxlength in puzzel inputs
 
 }
 
-function changeTitle(tab) {
-    var title;
-
-    switch (tab) {
-        case "tabTimer":
-            title = "Timer"
-            break;
-        case "tabOpenDeur":
-            title = "Open Deur";
-            break;
-        case "tabPuzzel":
-            title = "Puzzel";
-            break;
-        case "tabIngelijst":
-            title = "Ingelijst";
-            break;
-        case "tabInfo":
-            title = "Info";
-            break;
-        case "tabInstellingen":
-            title = "Instellingen"
-
-        default:
-            break;
-    }
-
-    console.log(title);
-
-    $("#titel").html(title);
-}
-
-function initializeSettings() {
-    $(".setting").each(function () {
-        var setting = $(this).data("setting");
-
-        //check exists
-        if (localStorage.getItem(setting)) {
-            if (localStorage.getItem(setting) == "true") {
-                $(this).prop("checked", true);
-            }
-
-        } else {
-            localStorage.setItem(setting, false); //put setting in localstorage
-        }
-    });
-}
-
-function executeStartupSettings() {
-
-}

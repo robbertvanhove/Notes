@@ -13,9 +13,8 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
 
 
     this.init = function () {
-       this.navigate(true, false, false);
+        this.navigate(true, false, false);
     };
-
 
     this.navigate = function (start, input, show) {
         if (start) { //start tonen/verbergen
@@ -36,7 +35,6 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
             $(this.showDiv).hide();
         }
 
-
     };
 
     this.start = function () {
@@ -54,23 +52,21 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
 
         //output tonen
         $("<h4></h4>").html(this.vraag).appendTo(this.output);
-        
+
         var lijstAntwoorden = $("<ul></ul>");
 
-        if(antwoorden.length > 4) {
+        if (antwoorden.length > 4) {
             lijstAntwoorden.addClass("split-list");
         }
 
-        
-
-        antwoorden.forEach(function(antwoord){
-            var html = "<button class='check btn red'><i class='material-icons'>clear</i></button> "
-            + antwoord;
+        antwoorden.forEach(function (antwoord) {
+            var html = "<button class='check btn red'><i class='material-icons'>clear</i></button> " +
+                antwoord;
             $("<li class='answer-check'></li>").html(html).appendTo(lijstAntwoorden);
         });
 
         lijstAntwoorden.appendTo(this.output);
-        
+
 
     };
 
@@ -86,15 +82,15 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
 
     };
 
-    this.controleInput = function(){
+    this.controleInput = function () {
         var filledIn = true;
 
-        if($(this.inputVraag).val() == "") { //controle vraag ingevuld
+        if ($(this.inputVraag).val() == "") { //controle vraag ingevuld
             filledIn = false;
         }
 
-        $(inputAntwoorden).each(function(){
-            if($(this).val() == ""){
+        $(inputAntwoorden).each(function () {
+            if ($(this).val() == "") {
                 filledIn = false;
             }
         });
@@ -102,20 +98,39 @@ function Vraag(startDiv, inputDiv, showDiv, inputVraag, inputAntwoorden, output)
         return filledIn;
     };
 
-    this.selectRandomInput = function(soort){
-        var question = "random";
-        var answers = ["answer 1", "answer 2", "answer3", "answer4"];
+    this.selectRandomInput = function (soort) {
+
         var counter = 0;
+        var question;
+        var answers = [];
 
-        $(this.inputVraag).val(question);
+        var vraagInput = this.inputVraag;
+        var antwoordInput = this.inputAntwoorden;
+        
+        function getData() {
+            return $.ajax({
+                url: "http://robbertvanhove.ddns.net/dsmtw/randomVraag.php",
+                dataType: 'json',
+                data: {soort: soort}
+            });
+        }
 
-        $(this.inputAntwoorden).each(function () { //antwoorden ophalen
-           $(this).val(answers[counter]);
-           counter++;
+        getData().done(function (data) {
+            //vraag opvullen
+            question = data.vraag;
+            $(vraagInput).val(question);
+
+            //antwoorden opvullen
+            answers = data.antwoorden;
+            console.log(answers);
+            $(antwoordInput).each(function () { //antwoorden ophalen
+                $(this).val(answers[counter].antwoord);
+                counter++;
+            });
+
+            
+
         });
-
-       
-
 
     };
 

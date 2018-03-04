@@ -1,26 +1,8 @@
 /* General */
 
-.btn:active, .btn:focus{
-    background-color: rgba(250, 182, 101, 0.5);;
-}
-.spa {
-    display: none;
-    margin-top: 20px;
-    
-}
-
-.collapsible-header.active {
-    background-color: #921405;
-    color: white;
-}
-
-
-body {
-    background-color: rgba(250, 250, 250, 0.9);
-}
-
-#tabTimer {
-    display: block;
+.btn:active,
+.btn:focus {
+    background-color: rgba(250, 182, 101, 0.5);
 }
 
 .red-background {
@@ -29,14 +11,6 @@ body {
 
 .yellow-background {
     background-color: rgb(124, 216, 18);
-}
-
-.side-nav {
-    background-color: #BD2903;
-}
-
-.side-nav>li>a {
-    color: white;
 }
 
 table {
@@ -64,21 +38,52 @@ table {
     border-style: none;
 }
 
-.blurry {
-    color: transparent;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
 .transparentBG {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.split-list{
+.split-list {
     column-count: 2;
 }
-.split-list > li {
+
+.split-list>li {
     font-size: 15px;
 }
+
+.collapsible-header.active>i {
+    visibility: hidden;
+}
+
+/*navigation and pages */
+
+.spa {
+    display: none;
+    margin-top: 20px;
+}
+
+.collapsible-header.active {
+    background-color: #921405;
+    color: white;
+}
+
+body {
+    background-color: rgba(250, 250, 250, 0.9);
+}
+
+#tabTimer {
+    display: block;
+}
+
+.side-nav {
+    background-color: #BD2903;
+}
+
+.side-nav>li>a {
+    color: white;
+}
+
+
+
 
 /* Tmer */
 
@@ -130,9 +135,14 @@ table {
 
 #openDeurStart>div>button,
 #puzzelStart>div>button,
-#ingelijstStart>div>button{
+#ingelijstStart>div>button {
     height: 50px;
     font-size: 20px;
+}
+
+.blurry {
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Open Deur */
@@ -144,7 +154,8 @@ table {
 }
 
 #openDeurReset,
-#puzzelReset, #ingelijstReset {
+#puzzelReset,
+#ingelijstReset {
     height: 50px;
     font-size: 20px;
     margin-top: 10%;
@@ -166,7 +177,7 @@ table {
     border-width: 5px;
     border-color: #921405;
     border-style: solid;
-    font-size: 18px;
+    font-size: 13px;
     word-wrap: break-word;
 }
 

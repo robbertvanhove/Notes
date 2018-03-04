@@ -41,50 +41,123 @@ var Puzzel = function () {
         //html leegmaken
         $("#puzzel").html("");
         $("#antwoordenPuzzel").html("");
+        $(".answerP, .sleutelwoord").val("");
+        $("#s1, #s2, #s3").each(function(){
+            $(this).html($(this).data("text"));
+        });
 
     };
 
-    var checkAnswer = function(knop) {
+    var checkAnswer = function (knop) {
         var href = knop.attr("href");
-        id = _substractIdFromHref(href);
+        id = knop.data("id");
         var puzzelstuk = puzzelstukken[id];
-
         var kleur;
-
         console.log(puzzelstuk);
-        
+        knop.prop("disabled", true);
+
         //sleutels aanduiden
         puzzelstuk.kernwoorden.forEach(function (key) {
             $("#puzzel").find('td').each(function () {
                 var antwoord = $(this).text();
                 var kleuren = ["#609140", "#7ca1aa", "#fab665"]
-                
 
                 if (antwoord == key) {
                     kleur = kleuren[aantalJuist];
-                    
                     $(this).css("color", kleur);
                 }
             });
         }, this);
 
         //antwoord tonen
-        knop.siblings().removeClass("blurry"); 
+        knop.siblings().removeClass("blurry");
         knop.siblings().css("color", kleur);
         knop.removeClass("red").addClass("green");
         knop.find("i").html("check");
-        
 
-        aantalJuist ++;
+        aantalJuist++;
     };
 
-    var viewAnswers = function() {
-        if($(".answerPuzzel").hasClass("blurry")){
+    var viewAnswers = function () {
+        if ($(".answerPuzzel").hasClass("blurry")) {
             $(".answerPuzzel").removeClass("blurry");
         } else {
-            
             $(".answerPuzzel").addClass("blurry");
         }
+    };
+
+    var selectRandomPuzzel = function () {
+        var counter = 0;
+        var question;
+        var answer = [];
+
+        var vraagInput = this.inputVraag;
+        var antwoordInput = this.inputAntwoorden;
+
+        function getData() {
+            return $.ajax({
+                url: "http://robbertvanhove.ddns.net/dsmtw/randomPuzzel.php",
+                dataType: 'json',
+            });
+        }
+
+        getData().done(function (data) {
+            /*$(".sleutelwoord").each(function() {
+                $(this).val(data[counter].oplossing);
+                
+            });*/
+
+            $(".collapsible > li > div > ul").each(function () {
+
+                var oplossing = data[counter].oplossing;
+               $(this).find("li > input.sleutelwoord").val(oplossing); 
+               $("#s" + (counter + 1)).html(oplossing);
+
+
+               var antwoorden = new Array();
+                data[counter].antwoorden.forEach(function(i){
+                    antwoorden.push(i);
+                }, this);
+
+                console.log(antwoorden);
+                counterAntwoorden = 0;
+               $(this).find("li > input.answerP").each(function () {
+                    $(this).val(antwoorden[counterAntwoorden].stuk);
+                    counterAntwoorden++;
+               });
+
+               counter++;
+                /*console.log(sleutel);
+                var kernwoorden = new Array();
+    
+                $(this).find("li > input.answerP").each(function () { // alle kernwoorden ophalen
+                    var kernwoord = $(this).val();
+                    kernwoorden.push(kernwoord);
+                    keywords.push(kernwoord);
+                    console.log(kernwoord);
+                });
+    
+                var puzzelstuk = { //object met sleutelwoord en bijbehorende sleutelwoorden
+                    sleutel: sleutel,
+                    kernwoorden: kernwoorden // array
+                };
+    
+                puzzelstukken.push(puzzelstuk); // puzzelstuk toevoegen aan puzzelstukken
+    */
+            });
+
+
+
+
+
+
+
+
+
+            
+
+
+        });
     };
 
     //private
@@ -135,9 +208,10 @@ var Puzzel = function () {
 
     var _showAntwoorden = function () { //toont antwoorden in ul
         var teller = 0;
+
         puzzelstukken.forEach(function (e) {
-            $("<li></li>").html("<a href='#" + teller +
-                "' class='check btn red antwoordBtn'><i class='material-icons'>clear</i></a> <span class='answerPuzzel blurry'>" +
+            $("<li></li>").html("<button data-id='" + teller +
+                "' class='check btn red antwoordBtn'><i class='material-icons'>clear</i></button> <span class='answerPuzzel blurry'>" +
                 e.sleutel +
                 "</span>").appendTo("#antwoordenPuzzel");
             teller++;
@@ -152,22 +226,20 @@ var Puzzel = function () {
     var _validateInput = function () { // valideert alle input fields; geeft false terug als niet alles is ingevuld
         var valid = true;
         var inputs = new Array();
+
+        //controle alles ingevuld
         $("#puzzelInput").find("input").each(function () {
             console.log($(this).val());
             if ($(this).val() == "") {
                 valid = false;
             }
         });
+
+        //controle dubbele waardes
+
+
         return valid;
     };
-
-    var _substractIdFromHref = function (href) {
-        var id = href.replace("#", "");
-            id = parseInt(id);
-            return id;
-    };
-
-
 
 
     return {
@@ -176,6 +248,7 @@ var Puzzel = function () {
         reset: reset,
         checkAnswer: checkAnswer,
         viewAnswers: viewAnswers,
+        selectRandomPuzzel: selectRandomPuzzel
 
     }
 }();

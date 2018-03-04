@@ -19,6 +19,8 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="orientation" value="portrait" />
+        <icon density="ldpi" src="icon.png" />
+        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
