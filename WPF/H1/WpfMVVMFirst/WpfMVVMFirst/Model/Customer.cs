@@ -76,6 +76,8 @@ namespace WpfMVVMFirst.Model
             Country = country;
         }
 
+
+        //
         public void CalculateTax()
         {
             if (Amount > 2000)
@@ -90,6 +92,8 @@ namespace WpfMVVMFirst.Model
             {
                 tax = 5;
             }
+
+            NotifyPropertyChanged("Tax");
         }
 
 

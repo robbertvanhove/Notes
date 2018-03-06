@@ -70,6 +70,8 @@ namespace WpfMVVMThird.ViewModel
                 Studenten.Remove(SelectedItem);
             }
         }
+
+        
         
         private Student selectedItem;
         public Student SelectedItem

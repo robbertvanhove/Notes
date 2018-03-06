@@ -60,7 +60,7 @@
         <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Customer.Country}" />
         <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Customer.Tax}" />
 
-        <Button Grid.Column="1" Grid.Row="4" Content="Calculate Tax"  />
+        <Button Grid.Column="1" Grid.Row="4" Content="Calculate Tax" Command="{Binding CalculateTaxCommand}" />
 
     </Grid>
 </Window>
