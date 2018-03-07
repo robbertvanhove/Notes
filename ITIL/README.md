@@ -25,8 +25,13 @@
     - mttr = const; mtbf -> omhoog; tijd tussen incidenten omhoog
     - dus aantal incidenten moet verminderen op jaarbasis (proactief)
     - kennen: verschil relatieve -proactieve aanpak
+* p178 schema (overcapaciteit)
+* als in backend: geen capacaty management -> wat aan de hand (p179)
+* p186: zie ding over R0
+* verschil fysieke en technische security (p195)
+* verschil SLA - OLA - UC (p201)
 * 
- 
+
 ###tips
 * gebruik ergens inventarisatie
 
