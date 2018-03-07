@@ -15,8 +15,18 @@
 * quiz (dia 72)
 * /capacity management/
 * verschil effectiviteit - efficientie
+* figuur pagina 82 + 83 pdf
+* output strategie = portfolio
+* p111 + 112
+* verschil portfolio - catalog p 161
+* p166 figuur formule
+* reliability schema p168 + 169:
+    - reactieve aanpak(mttr omhoog) -> prestatiedruk ; mtbs = const
+    - mttr = const; mtbf -> omhoog; tijd tussen incidenten omhoog
+    - dus aantal incidenten moet verminderen op jaarbasis (proactief)
+    - kennen: verschil relatieve -proactieve aanpak
 * 
-
+ 
 ###tips
 * gebruik ergens inventarisatie
 
@@ -24,5 +34,7 @@
 * Capaciteit (objecten) R1 X T1 (scheduling) -> 2/30 service
 * CIO -> I = integration
 * benchmarking
-
+* case p85
+    - fout 1: detectie
+    - fout 2: prestatiedruk
 
