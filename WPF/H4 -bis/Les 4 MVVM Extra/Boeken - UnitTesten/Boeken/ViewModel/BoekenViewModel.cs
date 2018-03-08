@@ -39,7 +39,7 @@ namespace Boeken.ViewModel
 
             using (StreamReader reader = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "/Data/boeken.txt", UTF8Encoding.Default))
             {
-                string[] record = reader.ReadLine().Split(';');
+                string[] record;
                 while (!reader.EndOfStream)
                 {
                     record = reader.ReadLine().Split(';');

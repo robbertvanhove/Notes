@@ -19,7 +19,7 @@ namespace Boeken.Model
         {
             get
             {
-                return cover;
+                return auteur;
             }
 
             set
@@ -38,7 +38,7 @@ namespace Boeken.Model
 
             set
             {
-                cover = value;
+                titel = value;
                 NotifyPropertyChanged();
             }
         }
