@@ -116,7 +116,17 @@ Als meerdere stromen samen komen start de uitgaande flow wanneer er 1 input is b
 * Exclusive output splitting:
 Bij splitsen van stromen wordt flow naar exact 1 uitgaande stroom gestuurd (conditie true)
 ![Exclusive output splitting](EOutpSpl.png)
-* 
+* Voorbeeld:
+![Exclussive gw voorbeeld](ExGVb.png)
+##### Parallel Gateway
+* Paralell Input Merging:
+Als meerdere stromen samen komen -> uitgaande stroom wacht tot alle inkomende stromen binnen zijn
+![](ParInpMerg.png)
+* Parallel output splitting:
+Bij splitsen van inkomende stroom worden alle uitgaande stromen tegelijkertijd geactiveerd
+![](ParOutpSpl.png)
+* Voorbeeld:
+![](ParGwVb.png)
 
 ### Je kan op basis van een gegeven BPMN 2.0-schema een bedrijfsproces in woorden omschrijven.
 (praktijk)
