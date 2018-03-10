@@ -84,21 +84,45 @@ communicatie; Kloof dichten tussen business en IT.
 ### Je kan het concept regulatory compliance verduidelijken.
 * Bedrijfvan moeten kunnen garanderen dat hun bedrijfsprocessen en zeker hun boekhoudkundige registraties conform zijn aan wetten en kwaliteitsnormen.
 ### Je kan 1 praktijkvoorbeeld van BPR uitleggen zonder extra opzoekwerk.
+* Wal-Mart bestelde zelf voorraad bij fabrikanten als Proctor and Gamble.  Resultaat was ofwel te kleine ofwel te grote voorraden.
+* Na een BPR-proces verzorgt Proctor and Gamble zelf de voorraden bij WalMart omdat zij beter inzicht hebben in de tendensen op de markt.
+* Resultaat: beter voorraadbeheer;  effectiever aanvullen van de voorraden
 
 ### Je kan de meest gebruikte symbolen uit het BMPN 2.0-schema bondig beschrijven.
+#### Swimlanes
+- Bestaan uit:
+    * Pools:
+        - Bakent grenzen van proces af voor een entiteit
+        - Binnen 1 pool: slechts 1 proces
+    * Lanes:
+        - In een pool kunnen activiteiten gegroepeerd worden in lanes.
+        - Activiteiten in zelfde lane worden uitgevoerd door zelfde verantwoordelijke
+        - Kunnen onderverdeeld worden in sublanes
+- Bepalen swimlanes: stap 1 bij modelleren
+![swimlanes](swimlanes.png)
+#### Pools en message flows
+* Communicatie of uitwisseling data tussen pools -> Message flow 
+![](messageflow.png)
+* Sequence Flow kan nooit tussen 2 pools!
+* Voorbeeld:
+![voorbeeld message flow](Messageflow_voorbeeld.png)
 
-
+#### Basis Gateway symbolen
+![basis gateway-symbolen](Gateway_symbolen.png)
 ### Je kan op basis van een gegeven BPMN 2.0-schema een bedrijfsproces in woorden omschrijven.
+(praktijk)
 
 ### Je kan een in woorden omschreven bedrijfsproces modelleren in BPMN 2.0.  Je kan dit op papier en met behulp van Bizagi Process Modeler.
+(praktijk)
 
 ### Je kan fouten herkennen in een BPMN 2.0 schema.
 
 ### Je kan op basis van een BPMN 2.0-schema voorstellen formuleren om het proces grondig te herwerken tijdens een BPR-run.
+(praktijk)
 
 
 ### Je kan op basis van een BPMN 2.0-schema de pijnpunten in het bedrijfsproces herkennen en beschrijven.
-
+(praktijk)
 ### Je kan een voorbeeld geven waarbij de technologie de stimulator was tot een grondige vernieuwing van het proces.
 
 ### Je kan een voorbeeld geven waarbij het wijzigen van het proces de aanzet is tot het ontwikkelen van nieuwe technologieën.
