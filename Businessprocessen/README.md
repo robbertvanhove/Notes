@@ -24,3 +24,83 @@
     - In de laatste visie heeft ICT het hoogste volwassenheidsniveau bereikt. ICT denkt zoals de business.
     - Technologische innovaties zijn businessgericht uitgewerkt en worden bijgevolg moeiteloos door de organisatie opgenomen. Via een soort ‘AppStore’ worden nieuwe functionaliteiten in de businessprocessen geïntegreerd.
 
+## H1 Business process management
+### Je kan uitleggen wat een bedrijfsproces is.
+* zet input(s) om in output(s) 
+* draagt bij tot het bereiken van doelstellingen
+* creëert toegevoegde waarde
+* wordt aangestuurd door een vorige activiteit of door de tijd  (~event driven)
+* wordt uitgevoerd door mensen in een bepaalde rol 
+* wordt uitgevoerd op een of meerdere fysieke plaatsen
+* is afdelingsoverschrijdend
+* maakt gebruik van middelen: machines, applicaties, modellen, …
+* moet voldoen aan regels (wet- en regelgeving) 
+
+
+
+### Je kan een bedrijfsproces herkennen.
+![bedrijfsprocessen](bedrijfsprocessen_herkennen.png)
+### Je kan de volgende afkortingen voluit schrijven en bondig toelichten: BPM, BPMN en BPR.
+* BPM: 
+    - Business Process Management
+    - Continu proces van herkennen, beschrijven, herontwerwpen, implementeren en meten van bedrijfsprocessen met het oog op verbetering
+* BPMN: 
+    - Business Process Modeling & Notation
+    - Een verzameling objecten en symbolen om bedrijfsprocessen te modelleren.
+* BPR: 
+    - Business Process Re-engeneering
+    - Fundamenteel "re-thinking and radical re-design" van businessprocessen om duurzame maatregelen in prestatie te berijken. Zoals kost, kwaliteit, service en snelheid.
+
+### Je kent het doel van BPMN in het kader van Business IT Alignment.
+communicatie; Kloof dichten tussen business en IT.
+### Je kan uitleggen wat primaire, secundaire en managementprocessen zijn.
+* Primaire of bewerkende processen:
+    - Inkomende logistiek, productie, distributie, verkoop, dienst na verkoop -> transformatie
+* Secundaire of ondersteunende processen: 
+    - Infrastructuur, HR, Inkopen, R &D
+### Je kent het onderscheid tussen een functioneel en een operationeel proces.
+
+### Je kan uitleggen waarom functionele processen geen bedrijfsprocessen zijn.
+
+### Je kan verduidelijken wat een functionele organisatiestructuur inhoudt.
+* Afdelingen op basis van bedrijfsfunctie en competenties
+* Sturing top-down via hiërarchie
+* Prestatie indicatoren per afdeling
+* Silo denken, eiland denken
+* Suboptimalisatie per afdeling
+* Afdelingen die elkaar tegenwerken
+* Weinig betrokkenheid met eindproduct
+### Je kan verduidelijken wat een procesgeoriënteerde organisatiestructuur inhoudt.
+* (matrix-organisatie)
+* Focus op end-to-end verantwoordelijkheid
+* Werknemers kijken verder dan de eigen werkplek
+* Keten denken
+* Meer focus op klant
+* Meer aandacht voor core business
+* Gericht op corrigeren en verbeteren
+* Werking sneller aanpasbaar
+### Je kan 5 externe en 5 interne bedrijfsregels opsommen die het modelleren van bedrijfsprocessen beïnvloeden.
+![interne en externe bedrijfsregels](intern_extern_bedrijfsregels.jpg)
+### Je kan het concept regulatory compliance verduidelijken.
+* Bedrijfvan moeten kunnen garanderen dat hun bedrijfsprocessen en zeker hun boekhoudkundige registraties conform zijn aan wetten en kwaliteitsnormen.
+### Je kan 1 praktijkvoorbeeld van BPR uitleggen zonder extra opzoekwerk.
+
+### Je kan de meest gebruikte symbolen uit het BMPN 2.0-schema bondig beschrijven.
+
+
+### Je kan op basis van een gegeven BPMN 2.0-schema een bedrijfsproces in woorden omschrijven.
+
+### Je kan een in woorden omschreven bedrijfsproces modelleren in BPMN 2.0.  Je kan dit op papier en met behulp van Bizagi Process Modeler.
+
+### Je kan fouten herkennen in een BPMN 2.0 schema.
+
+### Je kan op basis van een BPMN 2.0-schema voorstellen formuleren om het proces grondig te herwerken tijdens een BPR-run.
+
+
+### Je kan op basis van een BPMN 2.0-schema de pijnpunten in het bedrijfsproces herkennen en beschrijven.
+
+### Je kan een voorbeeld geven waarbij de technologie de stimulator was tot een grondige vernieuwing van het proces.
+
+### Je kan een voorbeeld geven waarbij het wijzigen van het proces de aanzet is tot het ontwikkelen van nieuwe technologieën.
+
+
