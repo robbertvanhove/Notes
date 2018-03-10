@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>DSMTW</title>
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar-fixed">
+        <nav class="red-background">
+            <div class="nav-wrapper container">
+                <a href="#!" id="titel" class="brand-logo center">Timer</a>
+                <a href="#!" data-activates="nav-mobile" class="button-collapse show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Fixed sideNav -->
+    <ul id="nav-mobile" class="side-nav">
+        <li>
+            <div class="topmargin"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabTimer" data-title="Timer">Timer
+                <i class="material-icons right">access_time</i>
+            </a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabOpenDeur" data-title="Open Deur">
+                <i class="material-icons right">looks_two</i>Open Deur</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabPuzzel" data-title="Puzzel">
+                <i class="material-icons right">extension</i>Puzzel</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabIngelijst" data-title="Ingelijst">
+                <i class="material-icons right">looks_4</i>Ingelijst</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <li>
+            <a href="#!" data-show="tabInstellingen" data-title="Instellingen">Instellingen
+                <i class="material-icons right">settings</i>
+            </a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#!" data-show="tabInfo" data-title="Info">Info
+                <i class="material-icons right">info</i>
+            </a>
+        </li>
+
+    </ul>
+    <!----------------------------------------------------------------------------- -->
+
+    <!-- Pages -->
+
+    <div class="container">
+        <!-- Timer sectie -->
+        <div class="row spa" id="tabTimer">
+            <div class="col s12 center-align">
+
+                <!-- TODO:
+                        [x] Timer visualiseren en stylen
+                        [x] functionaliteit start/stop
+                        [x] functionaliteit seconden +/-
+                -->
+                <div id="timer" class="valign-wrapper z-depth-5">
+                    <span id="time" class="">60</span>
+
+                </div>
+                <div class="row" id="timerControls">
+                    <div class="col s3">
+                        <button id="timerMin" class="btn-floating btn-large waves-effect waves-light red ">
+                            <i class="material-icons">remove</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <input type="number" id="inputTijd" placeholder="Seconden" />
+                    </div>
+                    <div class="col s3">
+                        <button id="timerPlus" class="btn-floating btn-large waves-effect  green">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="timerReset" class="waves-effect waves-light btn-large btn-floating">
+                            <i class="material-icons">autorenew</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Open deur sectie -->
+        <div class="row spa" id="tabOpenDeur">
+            <div class="col s12">
+                <div id="openDeurStart" class="row">
+                    <div class="col s12">
+                        <button id="openDeurEigenVraag" class="btn full-width red-background yellow-color">
+                            Eigen vraag
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="openDeurWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                            Willekeurige vraag
+                        </button>
+                    </div>
+                </div>
+
+                <div id="openDeurInput">
+                    <label for="openDeurVraag">Geef uw vraag op:</label>
+                    <input id="openDeurVraag" type="text" placeholder="Vraag" />
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 1" class="inputOD" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 2" class="inputOD" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 3" class="inputOD" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 4" class="inputOD" />
+                            </td>
+                        </tr>
+
+                    </table>
+                    <button id="openDeurVorige" class="btn left navButton red-background yellow-color">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                    <button id="openDeurVolgende" class="btn right navButton red-background yellow-color">
+                        Start
+                    </button>
+
+                </div>
+
+                <div id="openDeurToon">
+                    <span id="openDeurOutput">
+
+                    </span>
+
+
+                    <div class="fixed-action-btn vertical click-to-toggle active">
+                        <a class="btn-floating btn-large yellow-background red-color">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul>
+                            <li>
+                                <button id="openDeurToonAntwoorden" class="btn-floating btn-large red-background yellow-color">
+                                    <i class="material-icons">remove_red_eye</i>
+                                </button>
+                            </li>
+                            <li>
+                                <button id="openDeurReset" class="btn-floating btn-large  red-background yellow-color">
+                                    <i class="material-icons">autorenew</i>
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- TODO:
+                        [x] functionaliteit vraag + antwoorden invoeren
+                        [x] (later) mogelijkheid random vraag uit database
+                        [x] vraag tonen -> mogelijkheid afvinken
+                -->
+            </div>
+        </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Puzzel sectie -->
+        <div class="row spa" id="tabPuzzel">
+            <div class="col s12">
+                <!-- TODO:
+                        [x] functionaliteit kernwoord + sleutelwoorden invoeren
+                        [x] (later) mogelijkheid random  uit database
+                        [x] sleutelwoorden tonen -> kernwoordfvinken
+                        [x] puzzel tonen
+                        [x] knop om blurred antwoorden te verbergen/tonen
+                -->
+
+                <div id="puzzelStart" class="row">
+                    <div class="col s12">
+                        <button id="puzzelEigenVraag" class="btn full-width red-background yellow-color">
+                            Eigen puzzel
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="puzzelWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                            Willekeurige puzzel
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- input -->
+                <div id="puzzelInput">
+                    <ul class="collapsible" data-collapsible="expandable" style="width: 100%">
+                        <li>
+                            <div class="collapsible-header">
+                                <span id="s1" data-text="Sleutelwoord 1">Sleutelwoord 1</span>
+                                <div class="preloader-wrapper wrapper-puzzel small active">
+                                    <div class="spinner-layer spinner-green-only">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
+                                        <label for="puzzelSleutelwoord1">Geef het eerste sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord1" type="text" placeholder="Sleutelwoord 1" class="sleutelwoord" data-target="s1" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <span id="s2" data-text="Sleutelwoord 2">Sleutelwoord 2</span>
+                                <div class="preloader-wrapper wrapper-puzzel small active">
+                                    <div class="spinner-layer spinner-green-only">
+                                      <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                      </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                      </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
+                                        <label for="puzzelSleutelwoord2">Geef het tweed sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord2" type="text" placeholder="Sleutelwoord 2" class="sleutelwoord" data-target="s2" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <span id="s3" data-text="Sleutelwoord 3">Sleutelwoord 3</span>
+                                <div class="preloader-wrapper wrapper-puzzel small active">
+                                    <div class="spinner-layer spinner-green-only">
+                                      <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                      </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                      </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="">
+                                    <li class="">
+                                        <label for="puzzelSleutelwoord3">Geef het derde sleutelwoord:</label>
+                                        <input id="puzzelSleutelwoord3" type="text" placeholder="Sleutelwoord 3" class="sleutelwoord" data-target="s3" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+                                    <li class="">
+                                        <input type="text" placeholder="Kernwoord" class="answerP" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+                    <button id="puzzelVorige" class="btn left navButton red-background yellow-color">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                    <button id="puzzelVolgende" class="btn right navButton red-background yellow-color">
+                        Start
+                    </button>
+                </div>
+
+                <!-- puzzel tonen -->
+                <div id="puzzelToon">
+                    <table id="puzzel" class="z-depth-5"></table>
+                    <ul id="antwoordenPuzzel"></ul>
+
+                    <div class="fixed-action-btn vertical click-to-toggle active">
+                        <a class="btn-floating btn-large yellow-background red-color">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul>
+                            <li>
+                                <button id="puzzelToonAntwoorden" class="btn-floating btn-large red-background yellow-color">
+                                    <i class="material-icons">remove_red_eye</i>
+                                </button>
+                            </li>
+                            <li>
+                                <button id="puzzelReset" class="btn-floating btn-large  red-background yellow-color">
+                                    <i class="material-icons">autorenew</i>
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Ingelijst sectie -->
+        <div class="row spa" id="tabIngelijst">
+            <div class="col s12">
+                <!-- TODO:
+                        [x] functionaliteit vraag + antwoorden invoeren
+                        [x] (later) mogelijkheid random vraag uit database
+                        [x] vraag tonen -> mogelijkheid afvinken
+                      
+                -->
+                <div id="ingelijstStart" class="row">
+                    <div class="col s12">
+                        <button id="ingelijstEigenVraag" class="btn full-width red-background yellow-color">
+                            Eigen vraag
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button id="ingelijstWillekeurigeVraag" class="btn full-width red-background yellow-color">
+                            Willekeurige vraag
+                        </button>
+                    </div>
+                </div>
+
+                <div id="ingelijstInput">
+                    <label for="ingelijstVraag">Geef uw vraag op:</label>
+                    <input id="ingelijstVraag" type="text" placeholder="Vraag" />
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 1" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 2" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 3" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 4" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 5" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 6" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 7" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 8" class="inputI" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Antwoord 9" class="inputI" />
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Antwoord 10" class="inputI" />
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="ingelijstVorige" class="btn left navButton red-background yellow-color">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                    <button id="ingelijstVolgende" class="btn right navButton red-background yellow-color">
+                        Start
+                    </button>
+
+                </div>
+
+                <div id="ingelijstToon">
+                    <span id="ingelijstOutput"></span>
+                    <div class="fixed-action-btn vertical click-to-toggle active">
+                        <a class="btn-floating btn-large yellow-background red-color">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul>
+                            <li>
+                                <button id="ingelijstToonAntwoorden" class="btn-floating btn-large red-background yellow-color">
+                                    <i class="material-icons">remove_red_eye</i>
+                                </button>
+                            </li>
+                            <li>
+                                <button id="ingelijstReset" class="btn-floating btn-large  red-background yellow-color">
+                                    <i class="material-icons">autorenew</i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Info sectie -->
+        <div class="row spa" id="tabInfo">
+            <div class="col s12">
+                <!-- Auteur info -->
+                <h4>Auteur</h4>
+                <p>Naam: Robbert Van Hove
+                    <br> Telefoon:
+                    <a href="tel:+32499160402">+32 499 16 04 02</a>
+                    <br> E-mail:
+                    <a href="mailto:robbertvanhove1@gmail.com">robbertvanhove1@gmail.com</a>
+                </p>
+                <!-- ---------------------------------- -->
+
+                <!-- Over de app -->
+                <h4>Over de app</h4>
+                <h5>Gebruik</h5>
+                <p>
+                    Gebruik deze app bij het spelen van het gezelschapspel "De Slimste Mens Ter Wereld".
+                </p>
+                <h5>Handleiding</h5>
+
+
+            </div>
+        </div>
+        <!--------------------------------------------------------------------- -->
+
+        <!-- Instellingen sectie -->
+        <div class="row spa" id="tabInstellingen">
+            <div class="col s12">
+                <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header">Algemeen
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </div>
+                        <div class="collapsible-body">
+                            <table class="bordered">
+                                <tr>
+                                    <td>Hoog contrast voor slechtzienden:</td>
+                                    <td>
+                                        <div class="switch right">
+                                            <label>
+                                                <input class="setting" id="hoogContrast" data-setting="hoogContrast" type="checkbox">
+                                                <span class="lever"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Timer
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </div>
+                        <div class="collapsible-body">
+                            <table class="bordered">
+                                <tr>
+                                    <td>Trillen als de timer op 0 springt:</td>
+                                    <td>
+                                        <div class="switch right">
+                                            <label>
+                                                <input class="setting" data-setting="vibrateOn0" type="checkbox">
+                                                <span class="lever"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/MyHelper.js"></script>
+    <script src="js/Timer.js"></script>
+    <script src="js/Settings.js"></script>
+    <script src="js/Puzzel.js"></script>
+    <script src="js/Vraag.js"></script>
+    <script src="js/Vibrator.js"></script>
+    <script defer src="js/app.js"></script>
+
+
+
+
+</body>
+
+</html>

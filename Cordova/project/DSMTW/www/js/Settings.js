@@ -1,5 +1,9 @@
 var Settings = function () {
-
+    /** 
+     * Gets all checkboxes with the .setting class
+     * Makes new setting in localstorage if not exists
+     * 
+    */
     var init = function () {
         $(".setting").each(function () {
             var setting = $(this).data("setting");
@@ -9,7 +13,6 @@ var Settings = function () {
                 if (localStorage.getItem(setting) == "true") {
                     $(this).prop("checked", true);
                 }
-
             } else {
                 localStorage.setItem(setting, false); //put setting in localstorage
             }

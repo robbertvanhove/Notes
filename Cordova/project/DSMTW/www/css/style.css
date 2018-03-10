@@ -10,7 +10,7 @@
 }
 
 .yellow-background {
-    background-color: rgb(124, 216, 18);
+    background-color: rgba(250, 182, 101, 0.5);
 }
 
 table {
@@ -54,6 +54,8 @@ table {
     visibility: hidden;
 }
 
+
+
 /*navigation and pages */
 
 .spa {
@@ -96,6 +98,7 @@ body {
     border-color: rgba(230, 19, 0, 0.8);
     border-style: solid;
     border-width: 5px;
+    
 }
 
 #time {
@@ -153,13 +156,7 @@ body {
     font-size: 25px;
 }
 
-#openDeurReset,
-#puzzelReset,
-#ingelijstReset {
-    height: 50px;
-    font-size: 20px;
-    margin-top: 10%;
-}
+
 
 /* puzzel */
 
@@ -169,7 +166,7 @@ body {
 }
 
 #puzzel td {
-    padding: 10px, 0, 10px, 0;
+    padding: 0;
     width: 33%;
     text-align: center;
     color: white;
@@ -177,8 +174,9 @@ body {
     border-width: 5px;
     border-color: #921405;
     border-style: solid;
-    font-size: 13px;
+    font-size: 14px;
     word-wrap: break-word;
+    height: 50px;
 }
 
 #antwoordenPuzzel>li {

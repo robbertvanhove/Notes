@@ -1,0 +1,193 @@
+/* General */
+
+.btn:active,
+.btn:focus {
+    background-color: rgba(250, 182, 101, 0.5);
+}
+
+.red-background {
+    background-color: #AA1300;
+}
+
+.yellow-background {
+    background-color: rgba(250, 182, 101, 0.5);
+}
+
+table {
+    font-size: 15px;
+}
+
+.navButton {
+    width: 40%
+}
+
+.yellow-color {
+    color: rgb(250, 182, 101);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.collection>li.collection-item,
+#antwoordenPuzzel>li {
+    margin-top: 10px;
+}
+
+.collection {
+    border-style: none;
+}
+
+.transparentBG {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.split-list {
+    column-count: 2;
+}
+
+.split-list>li {
+    font-size: 15px;
+}
+
+.collapsible-header.active>i {
+    visibility: hidden;
+}
+
+/*navigation and pages */
+
+.spa {
+    display: none;
+    margin-top: 20px;
+}
+
+.collapsible-header.active {
+    background-color: #921405;
+    color: white;
+}
+
+body {
+    background-color: rgba(250, 250, 250, 0.9);
+}
+
+#tabTimer {
+    display: block;
+}
+
+.side-nav {
+    background-color: #BD2903;
+}
+
+.side-nav>li>a {
+    color: white;
+}
+
+.collapsible-header>i.material-icons {
+    margin-right: 5px;
+    margin-left: auto;
+}
+
+/* Tmer */
+
+#timer {
+    width: 250px;
+    height: 250px;
+    background-color: #AA1300;
+    border-radius: 50%;
+    margin: 0 auto;
+    border-color: rgba(230, 19, 0, 0.8);
+    border-style: solid;
+    border-width: 5px;
+}
+
+#time {
+    margin: 0 auto;
+    font-size: 90px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#timerControls {
+    margin-top: 50px;
+}
+
+#tabTimer input {
+    text-align: center;
+    font-size: 20px;
+}
+
+#timerReset {
+    width: 50%;
+    background-color: #BD2903;
+    font-size: 20px;
+}
+
+/* Open Deur, Puzzel, Ingelijst */
+
+#openDeurStart,
+#puzzelStart,
+#ingelijstStart {
+    margin-top: 50%;
+}
+
+#openDeurStart>div,
+#puzzelStart>div,
+#ingelijstStart>div {
+    margin-top: 20px;
+}
+
+#openDeurStart>div>button,
+#puzzelStart>div>button,
+#ingelijstStart>div>button {
+    height: 50px;
+    font-size: 20px;
+}
+
+.preloader-wrapper{
+    position: absolute;
+    right: 80px;
+}
+
+.blurry {
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Open Deur */
+
+.answer-check {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+/* puzzel */
+
+#puzzel {
+    background-color: #BD2903;
+    table-layout: fixed;
+}
+
+#puzzel td {
+    padding: 0;
+    width: 33%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-width: 5px;
+    border-color: #921405;
+    border-style: solid;
+    font-size: 14px;
+    word-wrap: break-word;
+    height: 50px;
+}
+
+#antwoordenPuzzel>li {
+    font-size: 20px;
+}
+
+/*
+# Kleuren:
+    * Hoofdkleur (rood) : AA1300
+    * Secundaire kleur (rood) : BD2903
+    * Geel: rgb(250, 182, 101) 
+*/

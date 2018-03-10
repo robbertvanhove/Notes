@@ -15,6 +15,7 @@ var Timer = function () {
             _updateTimer();
         }
     };
+    
     var toggle = function () {
         if (!started) {
             startTimer();

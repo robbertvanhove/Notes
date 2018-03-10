@@ -42,28 +42,29 @@ var Puzzel = function () {
         $("#puzzel").html("");
         $("#antwoordenPuzzel").html("");
         $(".answerP, .sleutelwoord").val("");
-        $("#s1, #s2, #s3").each(function(){
+        $("#s1, #s2, #s3").each(function () {
             $(this).html($(this).data("text"));
         });
 
     };
-
+    /**
+     * @param  {} knop
+     */
     var checkAnswer = function (knop) {
         var href = knop.attr("href");
         id = knop.data("id");
         var puzzelstuk = puzzelstukken[id];
         var kleur;
         console.log(puzzelstuk);
-        knop.prop("disabled", true);
+        
 
         //sleutels aanduiden
         puzzelstuk.kernwoorden.forEach(function (key) {
             $("#puzzel").find('td').each(function () {
                 var antwoord = $(this).text();
-                var kleuren = ["#609140", "#7ca1aa", "#fab665"]
 
                 if (antwoord == key) {
-                    kleur = kleuren[aantalJuist];
+                    kleur = knop.data("color");
                     $(this).css("color", kleur);
                 }
             });
@@ -102,63 +103,31 @@ var Puzzel = function () {
         }
 
         getData().done(function (data) {
-            /*$(".sleutelwoord").each(function() {
-                $(this).val(data[counter].oplossing);
-                
-            });*/
-
             $(".collapsible > li > div > ul").each(function () {
 
                 var oplossing = data[counter].oplossing;
-               $(this).find("li > input.sleutelwoord").val(oplossing); 
-               $("#s" + (counter + 1)).html(oplossing);
+                $(this).find("li > input.sleutelwoord").val(oplossing);
+                $("#s" + (counter + 1)).html(oplossing);
 
 
-               var antwoorden = new Array();
-                data[counter].antwoorden.forEach(function(i){
+                var antwoorden = new Array();
+                data[counter].antwoorden.forEach(function (i) {
                     antwoorden.push(i);
                 }, this);
 
                 console.log(antwoorden);
                 counterAntwoorden = 0;
-               $(this).find("li > input.answerP").each(function () {
+                $(this).find("li > input.answerP").each(function () {
                     $(this).val(antwoorden[counterAntwoorden].stuk);
                     counterAntwoorden++;
-               });
-
-               counter++;
-                /*console.log(sleutel);
-                var kernwoorden = new Array();
-    
-                $(this).find("li > input.answerP").each(function () { // alle kernwoorden ophalen
-                    var kernwoord = $(this).val();
-                    kernwoorden.push(kernwoord);
-                    keywords.push(kernwoord);
-                    console.log(kernwoord);
                 });
-    
-                var puzzelstuk = { //object met sleutelwoord en bijbehorende sleutelwoorden
-                    sleutel: sleutel,
-                    kernwoorden: kernwoorden // array
-                };
-    
-                puzzelstukken.push(puzzelstuk); // puzzelstuk toevoegen aan puzzelstukken
-    */
+
+                counter++;
             });
-
-
-
-
-
-
-
-
-
-            
-
 
         });
     };
+
 
     //private
     var _getPuzzel = function () { //haalt alle sleutelwoorden + kernwoorden op
@@ -192,7 +161,13 @@ var Puzzel = function () {
         var teller = 1;
         var keys = _shuffle(keywords); //kernwoorden randomizen
 
+        
+        
+
         keys.forEach(function (key) { //tabel opvullen
+            //kleur selecteren
+            
+
             html += "<td>" + key + "</td>";
 
             if (teller % 3 == 0) { // elke 3 woorden nieuwe rij
@@ -204,14 +179,18 @@ var Puzzel = function () {
         html += "</tr>";
 
         $("#puzzel").html(html);
+        
     };
 
     var _showAntwoorden = function () { //toont antwoorden in ul
         var teller = 0;
+        var kleuren = ["#609140", "#7ca1aa", "#fab665"]
 
         puzzelstukken.forEach(function (e) {
             $("<li></li>").html("<button data-id='" + teller +
-                "' class='check btn red antwoordBtn'><i class='material-icons'>clear</i></button> <span class='answerPuzzel blurry'>" +
+                "' class='check btn red antwoordBtn' data-color='"
+                + kleuren[teller]
+                + "'><i class='material-icons'>clear</i></button> <span class='answerPuzzel blurry'>" +
                 e.sleutel +
                 "</span>").appendTo("#antwoordenPuzzel");
             teller++;
