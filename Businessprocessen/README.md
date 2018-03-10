@@ -109,6 +109,15 @@ communicatie; Kloof dichten tussen business en IT.
 
 #### Basis Gateway symbolen
 ![basis gateway-symbolen](Gateway_symbolen.png)
+##### Exlusive gateway
+* Exclusive Input Merging:
+Als meerdere stromen samen komen start de uitgaande flow wanneer er 1 input is binnengekomen
+![exclusive input merging](EInpMerg.png)
+* Exclusive output splitting:
+Bij splitsen van stromen wordt flow naar exact 1 uitgaande stroom gestuurd (conditie true)
+![Exclusive output splitting](EOutpSpl.png)
+* 
+
 ### Je kan op basis van een gegeven BPMN 2.0-schema een bedrijfsproces in woorden omschrijven.
 (praktijk)
 
