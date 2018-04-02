@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kassasysteem", "Kassasysteem\Kassasysteem.csproj", "{6723E885-6D25-4C5F-A3D9-139FD57378DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6723E885-6D25-4C5F-A3D9-139FD57378DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6723E885-6D25-4C5F-A3D9-139FD57378DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6723E885-6D25-4C5F-A3D9-139FD57378DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6723E885-6D25-4C5F-A3D9-139FD57378DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7DA6573-763F-475D-8380-FAD6051CF295}
+	EndGlobalSection
+EndGlobal

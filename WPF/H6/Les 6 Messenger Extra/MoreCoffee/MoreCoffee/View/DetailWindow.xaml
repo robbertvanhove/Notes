@@ -1,0 +1,38 @@
+﻿<Window x:Class="MoreCoffee.View.DetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoreCoffee.View"
+        DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=DetailWindowViewModel}"
+        mc:Ignorable="d"
+        Title="Detailgegevens koffie" Height="500"  Width="600">
+  
+    <Grid Grid.Column="1" Margin="20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="30" ></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        <TextBlock Name="imgSource" Text="{Binding SelectedKoffie.Id, StringFormat=/Images/{0}.jpg}" Visibility="Collapsed" />
+        <Image Source="{Binding Text, ElementName=imgSource}" Grid.Row="0"
+                   Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="1" Text="Koffie:" FontWeight="Bold" />
+            <TextBlock Grid.Row="2" Text="Beschrijving:" FontWeight="Bold" />
+            <TextBlock Grid.Row="3" Text="Prijs:" FontWeight="Bold" />
+
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedKoffie.Naam, Mode=TwoWay}" Margin="0,0,0,10"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedKoffie.Beschrijving,Mode=TwoWay}" Margin="0,0,0,10" AcceptsReturn="True" TextWrapping="WrapWithOverflow"  />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedKoffie.Prijs,Mode=TwoWay}" Margin="0,0,0,10" />
+
+        <Button Grid.Row="4" Content="Bewaren" Command="{Binding UpdateCommand}" FontWeight="Bold" Background="White" BorderBrush="Black"  Margin="0,20,0,0"/>
+
+        </Grid>
+
+</Window>

@@ -1,0 +1,127 @@
+﻿<Page x:Class="Kassasysteem.View.ProductenOverzicht"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kassasysteem.View"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ProductenViewModel}"
+      
+      
+      
+      Title="ProductenOverzicht">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Overzicht producten-->
+        <Grid Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Content="Overzicht" Grid.Row="0" Style="{StaticResource LabelH1}" />
+            <ListView 
+                Grid.Row="1"
+                ItemsSource="{Binding Producten}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedProduct}" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Producten"
+                                        DisplayMemberBinding="{Binding Naam}"/>
+                        <GridViewColumn Header="Prijs"
+                                        DisplayMemberBinding="{Binding Prijs}"/>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Height" Value="50" />
+                        <Setter Property="Background" Value="#FF5C99D6"/>
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                
+
+
+            </ListView>
+            
+        </Grid>
+
+
+
+        <!--Acties-->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Content="Acties" Grid.Row="0" Style="{StaticResource LabelH1}"/>
+            <StackPanel Grid.Row="1" >
+                <Button Command="{Binding WijzigenCommand}" Style="{StaticResource ButtonPrimary}">Wijzig</Button>
+                <Button Command="{Binding DeleteProductCommand}" Style="{StaticResource ButtonPrimary}" Content="Verwijder" />
+                <Button Command="{Binding MaakSnelkeuzeCommand}" Content="Maak snelkeuze" Style="{StaticResource ButtonPrimary}" />
+                <Button Command="{Binding ToevoegenCommand}" Content="Nieuw Product" Style="{StaticResource ButtonPrimary}"  />
+                
+                
+            </StackPanel>
+
+        </Grid>
+
+
+
+
+
+        <!--Snelkeuzes-->
+        <Grid Grid.Column="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                
+                
+            </Grid.RowDefinitions>
+            <Label Content="Snelkeuzes" Grid.Row="0" Style="{StaticResource LabelH1}" />
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                <ListView 
+                    Grid.Row="0"
+                    ItemsSource="{Binding Snelkeuzes}"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedSnelkeuze}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Naam}"/>
+                        </GridView>
+                    </ListView.View>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="Height" Value="50" />
+                            <Setter Property="Background" Value="#FF5C99D6"/>
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                   
+
+                </ListView>
+                <StackPanel Grid.Row="1">
+                    <Button Style="{StaticResource ButtonPrimary}" Command="{Binding VerwijderSnelkeuzeCommand}" Content="Verwijder uit snelkeuzes" />
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
